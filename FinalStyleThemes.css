@@ -1,0 +1,11 @@
+.colors ul li {
+	list-style-type: none;
+	height: 200px;
+	width: 200px;
+}
+
+ li img {
+ 	list-style-type: none;
+	height: 250px;
+	width: 250px;
+}
