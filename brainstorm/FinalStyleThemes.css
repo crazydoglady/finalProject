@@ -24,7 +24,16 @@ header{ height:100px;}
 	display: inline-block;
 	list-style-type: none;
 }
-
+.users{
+	color: white;
+}
+.users li {
+	display: inline-block;
+}
+.users img {
+	height: 200px;
+	width: 200px;	
+}
 #color1 {
 	color: white;
 	height: 200px;
