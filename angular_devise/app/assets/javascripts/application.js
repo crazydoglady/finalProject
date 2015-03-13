@@ -16,5 +16,4 @@
 //= require angular.min
 //= require angular-route.min
 //= require devise-min
-//= require angular-devise/devise
 //= require_tree .
