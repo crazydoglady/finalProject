@@ -9,9 +9,11 @@ gem 'quiet_assets'
 gem 'workflow'
 gem 'faker'
 gem 'devise'
+gem 'simple_token_authentication', '~> 1.0'
 gem 'angular_rails_csrf'
 gem 'haml-rails'
 gem 'responders', '~> 2.0' 
+gem 'rack-cors'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

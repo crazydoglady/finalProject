@@ -6,6 +6,6 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    %class.notice= notice
+    %class.alert= alert
     = yield
