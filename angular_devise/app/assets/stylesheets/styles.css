@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #54483f; }
+
+header {
+  margin: 0;
+  padding: 0;
+  background: #2f2526;
+  color: #adc240; }
+  header h1 {
+    margin: 0;
+    padding: 0; }
+
+.splash img {
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  display: inline-block; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  li a {
+    display: inline-block; }
+
+/*# sourceMappingURL=Styles.css.map */

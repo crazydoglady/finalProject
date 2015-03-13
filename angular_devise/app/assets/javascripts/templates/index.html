@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>styles</title>
+	<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body ng-app="farmApp">
+<header><h1>FarmStand</h1>
+	<nav>
+		<li class="col-md-1 home"><a href="#/">Home</a></li>
+		<li class="col-md-1 producer"><a href="#/producer">Producers</a></li>
+		<li class="col-md-1 restaurant"><a href="#/restaurant">Cuisiniers</a></li>
+		<li class="col-md-1 consumer"><a href="#/consumer">Consumers</a></li>
+		<li class="col-md-1 login"><a href="#/login">Login</a></li>
+	</nav>
+
+</header>
+<div class="container col-sm-12 col-md-12 col-lg-12">
+
+<ng-view></ng-view>	
+	
+</div><!--end container-->
+<footer class="col-md-12">
+	<nav>
+		<ul>
+			<li class="col-md-3">
+				<a href="#/producer"><h3>Producers</h3></a>
+			</li>
+			<li class="col-md-3">	
+				<a href="#/restaurant"><h3>  Restaurants</h3></a>
+			</li>
+			<li class="col-md-3">
+				<a href="#/not-found"><h3> Eat. Learn. Grow.</h3></a>
+			</li>
+			<li class="col-md-3">
+				<a href="#/consumer"><h3>Consumers</h3></a>
+			</li>
+		</ul>
+	</nav>
+	<h6>This application was built by the JVsquad. Iron Yard 2015</h6>
+</footer>
+
+<script src="bower_components/normalize.css/normalize.css"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="mainCtrl.js"></script>
+<script src="mainService.js"></script>
+
+</body>
+</html>
