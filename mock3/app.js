@@ -15,7 +15,7 @@
       controller: 'MainController as mainCtrl'
     })
     .when('/consumer', {
-      templateUrl: 'consumerFeature/consumer.html',
+      templateUrl: 'consumerFeature/consumers.html',
       controller: 'ConsumerController as CustCtrl'
     })
      .when('/consumer/:custId', {
@@ -27,11 +27,11 @@
       controller: 'farmerController as farmCtrl'
     })
     .when('/producer/:producerId', {
-      templateUrl: 'farmerFeature/profile.html',
-      controller: 'farmerControler as farmCtrl'
+      templateUrl:'farmerFeature/profile.html',
+      controller:'farmerControler as farmCtrl'
     })
     .when('/restaurant', {
-      templateUrl: 'restaurantFeature/restaurant.html',
+      templateUrl: 'restaurantFeature/restaurants.html',
       controller: 'restaurantController as restCtrl'
     })
     .when('/restaurant/:restaurantId', {
