@@ -23,14 +23,6 @@
       templateUrl: 'consumerFeature/profile.html',
       controller: 'ConsumerController as CustCtrl'
     })
-    .when('/producer', {
-      templateUrl: 'farmerFeature/farmers.html',
-      controller: 'farmerController as farmCtrl'
-    })
-    .when('/producer/:producerId', {
-      templateUrl:'farmerFeature/profile.html',
-      controller:'farmerControler as farmCtrl'
-    })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
       controller: 'restaurantController as restCtrl'

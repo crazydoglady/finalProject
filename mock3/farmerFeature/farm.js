@@ -10,7 +10,13 @@
   ])
   .config(function ($routeProvider){
   	$routeProvider
-
-
+   .when('/producer', {
+      templateUrl: 'farmerFeature/farmers.html',
+      controller: 'FarmController as farmCtrl'
+    })
+    .when('/producer/:producerId', {
+      templateUrl:'farmerFeature/profile.html',
+      controller:'farmerControler as farmCtrl'
+    })
   });//end config
   })();//end farm.js

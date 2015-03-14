@@ -12,16 +12,19 @@
       	farmCtrl.SingleProducer = data;
       });
 
-      farmCtrl.addProducer = function (newProducer){
-      	console.log(newProducer);
-      	FarmService.addFarm(newProducer);
-      };
+      farmCtrl.addProducer = function (newFarm){
+      	console.log(newFarm);
+      	FarmService.addProducer(newFarm);
+      	$location.path('producer/:producerId');
+      }
+
       farmCtrl.deleteProducer = function (producer) {
       	FarmService.deleteFarm(producer);
-      };
+      }
+
       farmCtrl.editProducer = function(producer){
       	FarmService.editFarm(producer, $routeParams.FarmId);
-      };
+      }
 
 	});
 
