@@ -1,9 +1,45 @@
-<div class="jumbotron joinUs">
+<div class="jumbotron registerMember">
 	<h1>Join Us! </h1>
 	<p><h3>If you are interested in joining us, please see the different categories below. <a href="#/contact">Contact us</a> with any questions or problems with your registration. </h3></p>
 	<p><h3>We look forward to working with you!</h3></p>
 </div>
-<section class="registerRestaurant col-md-4">
+<div class="Who will benefit?">
+<section class="categories col-lg-4 col-md-4 col-sm-4">
+  <p><h2>local growers</h2></p>
+  <p><h4>Family Farmers. Backyard or community gardeners. If you have local, fresh produce to sell, we have a network of restaurants and consumers who are eager to meet you! </h4></p>
+</section>
+<section class="categories col-lg-4 col-md-4 col-sm-4">
+  <p><h2>local consumers</h2></p>
+  <p> <h3>Definition: one who eats foods grown locally whenever possible). </h3></p>
+  <p>Great! We share your passion. We know it's important for the environment, the economy and health to support locally grown produce. By Joining Farmstand, you'll be able to network with local growers for fresh, seasonal produce. Get the inside scoop on what will be available when from your favorite growers and reserve product ahead of time for convenient pickup at your local farmer's market! (We know you shop there anyway...)</p>
+  <p>Oh, and we almost forgot! We also network with restaurants who are passionate about local food as well. Check out our restaurant members.</p>  
+</section>
+<section class="categories col-lg-4 col-md-4 col-sm-4">
+  <p><h2>local restaurants</h2></p>
+  <p><h4>Sometimes it can be hard to tell who is more passionate about food- the chefs who make it or the distinguished consumer. </p>
+
+  <p>Chefs know that the first step tp making great food is getting the freshest ingredients. Join our network to contact local growers directly and get the inside scoop on what is currently available. </p>
+  <p>Eating local has never been as popular as it is now. Our consumer network are almost as passionate about local food as you are! Registering with our application will allow consumers to see what you're cooking while continuing to support the local economy and environment by eating locally!</h4></p>
+</section>
+</div>
+<hr>
+<section class="registerMember col-lg-12 col-md-12 col-sm-12">
+  <button type="" ng-click="new =!new" class="btn btn-default">Join Now! </button>
+<form ng-show="new" class="col-md-5" ng-submit="mainCtrl.addMember(newMember)">
+    <input type="text" ng-model="newMember.name" class="col-lg-12" placeholder="Name">
+    <input type="text" ng-model="newMember.location" class=" col-lg-12" placeholder="Location">
+    <input type="text" ng-model="newMember.description" class="col-lg-12" placeholder="Description">
+    <select name="" id="" ng-model="newMember.category">
+      <option value="producer">Producer</option>
+      <option value="restaurant">Restaurant</option>
+      <option value="consumer">Consumer</option>
+    </select>
+    <input type="url" ng-model="newMember.website" class="col-lg-12" placeholder="website">
+    <input type="text" ng-model="newMember.email" class="col-lg-12" placeholder="email">
+  <button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
+</form>
+</section>
+<!-- <section class="registerRestaurant col-md-4">
 	<p><h2>Are you a locavore?</h2></p>
 	<p> <h3>Definition: one who eats foods grown locally whenever possible). </h3></p>
 	<p>Great! We share your passion. We know it's important for the environment, the economy and health to support locally grown produce. By Joining Farmstand, you'll be able to network with local growers for fresh, seasonal produce. Get the inside scoop on what will be available when from your favorite growers and reserve product ahead of time for convenient pickup at your local farmer's market! (We know you shop there anyway...)</p>
@@ -22,18 +58,7 @@
 </section>
  
 
-<section class="registerProd col-md-4" ng-controller="FarmController as farmCtrl">
-	<p><h4>Family Farmers. Backyard or community gardeners. If you have local, fresh produce to sell, we have a network of restaurants and consumers who are eager to meet you! </h4></p>
-	<button type="" ng-click="new =!new" class="btn btn-default">Join as a local Producer</button>
-<form ng-show="new" class="col-md-5" ng-submit="farmCtrl.addProducer(newProducer)">
-    <input type="text" ng-model="newProducer.name" class="col-lg-12" placeholder="Name">
-    <input type="text" ng-model="newProducer.location" class=" col-lg-12" placeholder="Location">
-    <input type="text" ng-model="newProducer.description" class="col-lg-12" placeholder="Description">
-    <input type="url" ng-model="newProducer.website" class="col-lg-12" placeholder="website">
-    <input type="text" ng-model="newProducer.email" class="col-lg-12" placeholder="email">
-  <button type="submit" class="">Register Producer</button>
-</form>
-</section>
+
 
 
 <section class="registerRestaurant col-md-4">
@@ -58,3 +83,4 @@
 
 
 
+ -->

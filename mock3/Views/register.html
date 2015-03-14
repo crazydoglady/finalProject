@@ -1,0 +1,14 @@
+
+<form ng-show="new" class="col-md-5" ng-submit="mainCtrl.addMember(newMember)">
+    <input type="text" ng-model="newMember.name" class="col-lg-12" placeholder="Name">
+    <input type="text" ng-model="newMember.location" class=" col-lg-12" placeholder="Location">
+    <input type="text" ng-model="newMember.description" class="col-lg-12" placeholder="Description">
+    <select name="" id="" ng-model="newMember.category">
+    	<option value="producer">Producer</option>
+    	<option value="restaurant">Restaurant</option>
+    	<option value="consumer">Consumer</option>
+    </select>
+    <input type="url" ng-model="newMember.website" class="col-lg-12" placeholder="website">
+    <input type="text" ng-model="newMember.email" class="col-lg-12" placeholder="email">
+  <button type="submit" class="">Register</button>
+</form>

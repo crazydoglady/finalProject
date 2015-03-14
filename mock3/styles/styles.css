@@ -29,6 +29,11 @@ li {
   li a {
     display: inline-block; }
 
+.joinUs {
+  margin: 33% 0 0 0;
+  background: #a62d1b;
+  box-shadow: 3px 5px 7px #2f2526; }
+
 /*producers page */
 .prodIntro {
   background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/farmers.jpg");
@@ -48,6 +53,7 @@ li {
     margin: 0 0 0 5%; }
 
 .joinUs {
+  margin: 33% 0 0 0;
   background: #a62d1b;
   box-shadow: 3px 5px 7px #2f2526; }
 
