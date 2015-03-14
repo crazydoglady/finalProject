@@ -16,7 +16,7 @@
     })
     .when('/producer/:producerId', {
       templateUrl:'farmerFeature/profile.html',
-      controller:'farmerControler as farmCtrl'
+      controller:'farmerController as farmCtrl'
     })
   });//end config
   })();//end farm.js

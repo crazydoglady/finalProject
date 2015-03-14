@@ -15,7 +15,7 @@ angular.module('farm')
 	};
 
 	var addFarm = function (newProducer) {
-		console.log(newProducer);
+		console.log(newProducer.name);
 		$http.post(server, newProducer);
 	};
 

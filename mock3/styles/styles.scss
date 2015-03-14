@@ -42,7 +42,7 @@ list-style-type: none;
 /*producers page */
 
 .prodIntro {
-	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),url('../assets/farmers.jpg');
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/farmers.jpg');
 	background-size: cover;
 }
 .register {
@@ -59,3 +59,9 @@ list-style-type: none;
 		margin: 0 0 0 5%;
 	}
 }	
+
+.joinUs {
+	background: $tomato;
+	box-shadow: 3px 5px 7px $eggplant;
+
+}

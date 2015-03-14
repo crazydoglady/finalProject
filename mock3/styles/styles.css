@@ -31,7 +31,7 @@ li {
 
 /*producers page */
 .prodIntro {
-  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../assets/farmers.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/farmers.jpg");
   background-size: cover; }
 
 .register {
@@ -46,5 +46,9 @@ li {
   margin: 0 0 0 5%; }
   .developers .jumbotron {
     margin: 0 0 0 5%; }
+
+.joinUs {
+  background: #a62d1b;
+  box-shadow: 3px 5px 7px #2f2526; }
 
 /*# sourceMappingURL=Styles.css.map */
