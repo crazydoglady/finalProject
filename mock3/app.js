@@ -3,6 +3,7 @@
 
   angular.module('farmApp', [
     'ngRoute',
+    'farm'
     // 'consumer',
     // 'producer',
     // 'restaurant',
