@@ -39,3 +39,23 @@ list-style-type: none;
  display: inline-block;
 	}
 }
+/*producers page */
+
+.prodIntro {
+	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),url('../assets/farmers.jpg');
+	background-size: cover;
+}
+.register {
+	float: right;
+	}
+/*contact page */
+.valerie, .jackie {
+	height: 500px;
+	overflow: scroll;
+}
+.developers {
+	margin: 0 0 0 5%;
+	.jumbotron {
+		margin: 0 0 0 5%;
+	}
+}	

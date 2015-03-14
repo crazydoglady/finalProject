@@ -38,6 +38,14 @@
       templateUrl: 'restaurantFeature/profile.html',
       controller: 'restaurantController as restCtrl'
     })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/contact', {
+      templateUrl: 'views/contact.html',
+      controller: 'MainController as mainCtrl'
+      })
     .when('/not_found', {
       templateUrl: 'views/not_found.html',
       controller: 'MainController as mainCtrl'
