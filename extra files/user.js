@@ -1,26 +1,4 @@
-var farmstand = angular
-  .module('farmstand', ['ngRoute']['Devise']);
-  .config(function($httpProvider) {
-  $httpProvider.defaults.headers.common['X-CRSF-Token'] = $("meta[name=csrf-token]").attr("content");
-  })
-
-  config(function($routeProvider){
-    $routeProvider
-    .when('/farmers/new'.{
-      templateUrl: 'assets/templates/newFarmer.html'
-      controller: 'newFarmerCtrl'
-    })
-    .when('/farmers/edit'), {
-      templateUrl: 'assets/templates/editFarmer.html'
-      controller: 'editFarmerCtrl'
-    })
-    .otherwise({
-      templateUrl: 'assets.templates/index.html'
-      controller: 'indexCtrl'
-    })
-  })
- 
-  .controller('indexCtrl', function($scope, $http, Auth) {
+ .controller('indexCtrl', function($scope, $http, Auth) {
     $http.get('/home.json').success(function(data)){
       $scope.farmers = data;
     })

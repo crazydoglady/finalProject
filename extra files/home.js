@@ -1,20 +1,14 @@
-(function () {
-  "use strict";
 
-
-  angular.module('farmApp',['ngRoute'])
+  .module('farmApp', ['ngRoute']['Devise']);
   .config(function($httpProvider) {
   $httpProvider.defaults.headers.common['X-CRSF-Token'] = $("meta[name=csrf-token]").attr("content");
   })
-    // 'consumer',
-    // 'producer',
-    // 'restaurant',
-    // 'admin'
-    )
+ 
+ 
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-      templateUrl: '/assets/templates/index.html',
+      templateUrl: 'assets/templates/index.html',
       controller: 'indexCtrl'
     })
     .when('/consumer', {
@@ -45,10 +39,10 @@
       templateUrl: 'views/not_found.html',
       controller: 'MainController as mainCtrl'
     })
-    .otherwise({
+    .otherwise ({
       templateUrl: 'assets/templates/index.html',
       controller: 'indexCtrl'
-      })//end otherwise, this is equivalent to if/else statement in vanilla javascript
+    })//end otherwise, this is equivalent to if/else statement in vanilla javascript
   });//end config
+});
 
-})();

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_default_response_format
   respond_to :html, :json
 
+
 def after_sign_out_path_for(resource_or_scope)
   new_user_session_path 
 end  
