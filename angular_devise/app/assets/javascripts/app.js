@@ -10,12 +10,12 @@
     // 'producer',
     // 'restaurant',
     // 'admin'
-    )
+  
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
       templateUrl: '/assets/templates/index.html',
-      controller: 'indexCtrl'
+      controller: 'IndexController as indexCtrl'
     })
     .when('/consumer', {
       templateUrl: 'consumerFeature/consumers.html',

@@ -12,7 +12,7 @@ def after_sign_out_path_for(resource_or_scope)
 end  
 private
   def set_default_response_format
-    request.format = :json
+    request.format = :json unless params[:format]
   end 
 
 end

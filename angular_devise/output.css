@@ -1,0 +1,23 @@
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - input.sass
+
+Backtrace:
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:482:in `read'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:482:in `update_stylesheet'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/plugin.rb:108:in `method_missing'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:381:in `watch_or_update'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/bin/sass:23:in `load'
+/Users/JacqAttaq/.rvm/gems/ruby-2.2.0@jv_farm_angular_devise/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - input.sass"; }
