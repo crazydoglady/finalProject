@@ -8,7 +8,7 @@
        	farmCtrl.producers = data;
        });
       
-      FarmService.getSingleProducer($routeParams.itemId).success(function(data){
+      FarmService.getSingleProducer($routeParams.producerId).success(function(data){
       	farmCtrl.SingleProducer = data;
       });
 

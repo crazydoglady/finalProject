@@ -12,11 +12,11 @@
       	mainCtrl.SingleMember = data;
       });
 
-      mainCtrl.addMember = function (newMember){
+      mainCtrl.addMember = function (newMember){      
       	console.log(newMember);
       	MainService.addProfile(newMember);
       	console.log(newMember);
-      	$location.path('/login');
+      	$location.path('/auth');
       }
 
       mainCtrl.deleteMember = function (member) {

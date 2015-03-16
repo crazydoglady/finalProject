@@ -3,10 +3,9 @@
 
   angular.module('farmApp', [
     'ngRoute',
-    'farm'
-    // 'consumer',
-    // 'producer',
-    // 'restaurant',
+    'farm',
+    //'restaurant'
+    // 'consumer',    
     // 'admin'
   ])
   .config(function ($routeProvider) {
@@ -25,20 +24,24 @@
     })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
-      controller: 'restaurantController as restCtrl'
+      controller: 'FarmController as farmCtrl'
     })
-    .when('/restaurant/:restaurantId', {
+    .when('/restaurant/:producerId', {
       templateUrl: 'restaurantFeature/profile.html',
-      controller: 'restaurantController as restCtrl'
+      controller: 'FarmController as farmCtrl'
     })
-    .when('/login', {
-      templateUrl: 'views/login.html',
+    .when('/register', {
+      templateUrl: 'views/register.html',
       controller: 'MainController as mainCtrl'
     })
     .when('/contact', {
       templateUrl: 'views/contact.html',
       controller: 'MainController as mainCtrl'
       })
+    .when('/auth', {
+      templateUrl: 'views/auth.html',
+      controller: 'MainController as mainCtrl'
+    })
     .when('/not_found', {
       templateUrl: 'views/not_found.html',
       controller: 'MainController as mainCtrl'

@@ -7,8 +7,8 @@
   <section id="growers" class="col-lg-8 col-md-8 col-sm-8">
 	<ul class="col-lg-12 col-md-12 col-sm-12">
 		<h2>Our Network of local Growers: </h2>
-		 <input ng-model="query" type="text" name="searchbox" placeholder="filter results">
-		<li ng-repeat="producer in farmCtrl.producers  | orderBy: 'name'| filter:query as results" class="col-lg-8 col-md-8 col-sm-12">
+		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
+		<li ng-repeat="producer in farmCtrl.producers  | filter: 'producer' | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
 			<h3>{{producer.name}}</h3>
 			<h4>{{producer.location}}</h4>
 		</li>
@@ -17,7 +17,7 @@
 <div class="col-lg-4 col-md-4 col-sm-6 joinUs">
   <h1>Join!</h1>
   <p></p>
-  <p><a class="btn btn-primary btn-lg" href="#/login" role="button">Join us to start selling!</a></p>
+  <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Join us to start selling!</a></p>
 </div>
 </div>
 
