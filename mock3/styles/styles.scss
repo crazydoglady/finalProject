@@ -39,3 +39,58 @@ list-style-type: none;
  display: inline-block;
 	}
 }
+
+
+.joinUs {
+	margin: 33% 0 0 0;
+	background: $tomato;
+	box-shadow: 3px 5px 7px $eggplant;
+
+}
+.newReg {
+	margin: 1% 0 0 0;
+	input {
+		@extend .newReg;
+	}
+}
+/*producers page */
+
+.prodIntro {
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/farmers.jpg');
+	background-size: cover;
+}
+.register {
+	float: right;
+	}
+/*contact page */
+.valerie, .jackie {
+	height: 500px;
+	overflow: scroll;
+}
+.developers {
+	margin: 0 0 0 5%;
+	.jumbotron {
+		margin: 0 0 0 5%;
+	}
+}	
+
+#queryBox {
+	height: 4em;
+	border: 1px solid $eggplant;
+}
+
+.joinUs {
+	margin: 33% 0 0 0;
+	background: $tomato;
+	box-shadow: 3px 5px 7px $eggplant;
+
+}
+
+.restIntro {
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/swedishChef.jpg');
+	background-size: cover;
+}
+.consumerIntro {
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/consumer.jpg');
+	background-size: cover;
+}

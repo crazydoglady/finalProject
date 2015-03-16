@@ -3,9 +3,9 @@
 
   angular.module('farmApp', [
     'ngRoute',
-    // 'consumer',
-    // 'producer',
-    // 'restaurant',
+    'farm',
+    //'restaurant'
+    // 'consumer',    
     // 'admin'
   ])
   .config(function ($routeProvider) {
@@ -22,21 +22,25 @@
       templateUrl: 'consumerFeature/profile.html',
       controller: 'ConsumerController as CustCtrl'
     })
-    .when('/producer', {
-      templateUrl: 'farmerFeature/farmers.html',
-      controller: 'farmerController as farmCtrl'
-    })
-    .when('/producer/:producerId', {
-      templateUrl:'farmerFeature/profile.html',
-      controller:'farmerControler as farmCtrl'
-    })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
-      controller: 'restaurantController as restCtrl'
+      controller: 'FarmController as farmCtrl'
     })
-    .when('/restaurant/:restaurantId', {
+    .when('/restaurant/:producerId', {
       templateUrl: 'restaurantFeature/profile.html',
-      controller: 'restaurantController as restCtrl'
+      controller: 'FarmController as farmCtrl'
+    })
+    .when('/register', {
+      templateUrl: 'views/register.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/contact', {
+      templateUrl: 'views/contact.html',
+      controller: 'MainController as mainCtrl'
+      })
+    .when('/auth', {
+      templateUrl: 'views/auth.html',
+      controller: 'MainController as mainCtrl'
     })
     .when('/not_found', {
       templateUrl: 'views/not_found.html',

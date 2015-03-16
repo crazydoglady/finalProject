@@ -6,34 +6,33 @@ angular.module('farm')
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
 	
 
-	var getFarms = function () {
+	var getRests = function () {
 		return $http.get(server);
 	};
 
-	var getOneFarm = function (id) {
-		console.log(id);
+	var getOneRest = function (id) {
 		return $http.get(server + '/' + id);
 	};
 
-	var addFarm = function (newProducer) {
+	var addRest = function (newProducer) {
 		console.log(newProducer.name);
 		$http.post(server, newProducer);
 	};
 
-	var deleteFarm = function (id) {
+	var deleteRest = function (id) {
 		$http.delete(server + '/' + id);
 	};
 
-	var editFarm = function (producer, id) {
+	var editRest = function (producer, id) {
 		$http.put(server + '/' + id, producer)
 	};
 	return	{
 		//public : private
-		getProducers: getFarms,
-		getSingleProducer: getOneFarm,
-		addProducer: addFarm,
-		deleteProducer: deleteFarm,
-		editProducer: editFarm
+		getEatery: getRest,
+		getSingleEatery: getOneRest,
+		addEatery: addRest,
+		deleteEatery: deleteRest,
+		editEatery: editRest
 	}
 });
 
