@@ -23,11 +23,19 @@
       templateUrl: 'consumerFeature/profile.html',
       controller: 'ConsumerController as CustCtrl'
     })
+     .when('/producer', {
+      templateUrl: 'farmerFeature/farmers.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/producer/:memberId', {
+      templateUrl:'farmerFeature/profile.html',
+      controller:'MainController as mainCtrl'
+    })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
       controller: 'MainController as mainCtrl'
     })
-    .when('/restaurant/:producerId', {
+    .when('/restaurant/:memberId', {
       templateUrl: 'restaurantFeature/profile.html',
       controller: 'MainController as mainCtrl'
     })

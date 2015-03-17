@@ -9,7 +9,7 @@
 		<h2>Our Network of local Growers: </h2>
 		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
 		<li ng-repeat="member in mainCtrl.members  | filter: 'producer' | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
-			<h3>{{member.name}}</h3>
+			<a href="#/producer/{{member._id}}"><h3>{{member.name}}<i class="fa fa-chevron-right"></i></h3></a>
 			<h4>{{member.location}}</h4>
 		</li>
 	</ul>
