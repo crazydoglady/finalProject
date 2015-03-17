@@ -12,11 +12,11 @@
   	$routeProvider
    .when('/producer', {
       templateUrl: 'farmerFeature/farmers.html',
-      controller: 'FarmController as farmCtrl'
+      controller: 'MainController as mainCtrl'
     })
     .when('/producer/:producerId', {
       templateUrl:'farmerFeature/profile.html',
-      controller:'farmerController as farmCtrl'
+      controller:'MainController as mainCtrl'
     })
   });//end config
   })();//end farm.js

@@ -1,7 +1,7 @@
 (function () {
   "use strict";
-  angular.module('farmApp')
-    .controller('MainController', function (MainService, $location, $routeParams) {
+  angular.module('members')
+    .controller('MemberController', function (MainService, $location, $routeParams) {
       var mainCtrl = this;
 
        MainService.getProfiles().success(function(data){
@@ -12,19 +12,19 @@
       	mainCtrl.SingleMember = data;
       });
 
-      mainCtrl.addProfile = function (newMember){      
+      mainCtrl.addMember = function (newMember){      
       	console.log(newMember);
-      	MainService.addMember(newMember);
+      	MainService.addProfile(newMember);
       	console.log(newMember);
       	$location.path('/auth');
       }
 
-      mainCtrl.deleteProfile = function (member) {
-      	MainService.deleteMember(member);
+      mainCtrl.deleteMember = function (member) {
+      	MainService.deleteProfile(member);
       }
 
-      mainCtrl.editProfile = function(member){
-      	MainService.editMember(member, $routeParams.memberId);
+      mainCtrl.editMember = function(member){
+      	MainService.editProfile(member, $routeParams.memberId);
       }
 
 	});
