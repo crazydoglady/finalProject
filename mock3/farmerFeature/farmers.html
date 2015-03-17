@@ -8,16 +8,16 @@
 	<ul class="col-lg-12 col-md-12 col-sm-12">
 		<h2>Our Network of local Growers: </h2>
 		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
-		<li ng-repeat="producer in farmCtrl.producers  | filter: 'producer' | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
-			<h3>{{producer.name}}</h3>
-			<h4>{{producer.location}}</h4>
+		<li ng-repeat="member in mainCtrl.members  | filter: 'producer' | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+			<h3>{{member.name}}</h3>
+			<h4>{{member.location}}</h4>
 		</li>
 	</ul>
 </section>
 <div class="col-lg-4 col-md-4 col-sm-6 joinUs">
   <h1>Join!</h1>
   <p></p>
-  <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Join us to start selling!</a></p>
+  <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Register!</a></p>
 </div>
 </div>
 

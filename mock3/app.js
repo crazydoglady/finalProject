@@ -4,6 +4,7 @@
   angular.module('farmApp', [
     'ngRoute',
     'farm',
+    //'auth'
     //'restaurant'
     // 'consumer',    
     // 'admin'
@@ -24,11 +25,11 @@
     })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
-      controller: 'FarmController as farmCtrl'
+      controller: 'MainController as mainCtrl'
     })
     .when('/restaurant/:producerId', {
       templateUrl: 'restaurantFeature/profile.html',
-      controller: 'FarmController as farmCtrl'
+      controller: 'MainController as mainCtrl'
     })
     .when('/register', {
       templateUrl: 'views/register.html',
