@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #54483f; }
+
+header {
+  margin: 0;
+  padding: 0;
+  background: #2f2526;
+  color: #adc240; }
+  header h1 {
+    margin: 0;
+    padding: 0; }
+
+.splash img {
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  display: inline-block; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  li a {
+    display: inline-block; }
+
+.joinUs {
+  margin: 33% 0 0 0;
+  background: #a62d1b;
+  box-shadow: 3px 5px 7px #2f2526; }
+
+.newReg, .newReg input {
+  margin: 1% 0 0 0; }
+
+/*producers page */
+.prodIntro {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/farmers.jpg");
+  background-size: cover; }
+
+.register {
+  float: right; }
+
+/*contact page */
+.valerie, .jackie {
+  height: 500px;
+  overflow: scroll; }
+
+.developers {
+  margin: 0 0 0 5%; }
+  .developers .jumbotron {
+    margin: 0 0 0 5%; }
+
+#queryBox {
+  height: 4em;
+  border: 1px solid #2f2526; }
+
+.joinUs {
+  margin: 33% 0 0 0;
+  background: #a62d1b;
+  box-shadow: 3px 5px 7px #2f2526; }
+
+.restIntro {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/swedishChef.jpg");
+  background-size: cover; }
+
+.consumerIntro {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/consumer.jpg");
+  background-size: cover; }
+
+/*# sourceMappingURL=Styles.css.map */
