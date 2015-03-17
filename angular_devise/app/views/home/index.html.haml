@@ -1,12 +1,2 @@
-%h3 Content yo
-{{index.currentUser}}
-.login-container{'ng-hide': 'loggedIn()'}
-  Log In:
-  %form{'ng-submit': 'submitLoginAct()'}
-    %label Email
-    %input{'ng-model': 'loginEmail'}
-    %br/
-    %label Password
-    %input{'ng-model': 'loginPassword'}
-    %br/
-    %input{:type => "submit"}
+
+%div{ 'ng-view': ''}

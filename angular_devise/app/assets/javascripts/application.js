@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore-min
+
 //= require angular.min
 //= require angular-route.min
+//= require underscore-min
 //= require devise-min
+
+//= require app
 //= require_tree .
