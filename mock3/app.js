@@ -17,11 +17,11 @@
     })
     .when('/consumer', {
       templateUrl: 'consumerFeature/consumers.html',
-      controller: 'ConsumerController as CustCtrl'
+      controller: 'MainController as CustCtrl'
     })
      .when('/consumer/:custId', {
       templateUrl: 'consumerFeature/profile.html',
-      controller: 'ConsumerController as CustCtrl'
+      controller: 'MainController as CustCtrl'
     })
      .when('/producer', {
       templateUrl: 'farmerFeature/farmers.html',
@@ -49,6 +49,14 @@
       })
     .when('/auth', {
       templateUrl: 'views/auth.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/admin', {
+      templateUrl:'views/admin.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/admin/:memberId', {
+      templateUrl:'views/adminprofile.html',
       controller: 'MainController as mainCtrl'
     })
     .when('/not_found', {

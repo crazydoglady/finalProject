@@ -1,0 +1,12 @@
+  <section id="growers" class="col-lg-8 col-md-8 col-sm-8">
+	<ul class="col-lg-12 col-md-12 col-sm-12">
+		<h2>Network members: </h2>
+		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="Profile Lookup">
+		<li ng-repeat="member in mainCtrl.members | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+			<a href="#/admin/{{member._id}}"><h3>{{member.name}}<i class="fa fa-chevron-right"></i></h3></a>
+			<h4>{{member.location}}</h4>
+			<h4>{{member.category}}</h4>
+		<button ng-click="mainCtrl.deleteProfile(member._id)">Delete</button>
+		</li>
+	</ul>
+</section>

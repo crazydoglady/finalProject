@@ -2,10 +2,10 @@
 	<h1>LOCAL. </h1>
 	<p><h3>If you are interested in joining us, please see the different categories below. <a href="#/contact">Contact us</a> with any questions or problems with your registration. </h3></p>
 	<p><h3>We look forward to working with you!</h3></p>
-  <button><a href="#/auth">Already registered? Login here</a></button>
+  <button><a href="#">Already registered? Login here</a></button>
   <section class="registerMember col-lg-12 col-md-12 col-sm-12">
   <button type="" ng-click="new =!new" class="newReg" class="btn btn-default">Join Now! </button>
-<form ng-show="new" class="col-md-5 newReg" ng-submit="mainCtrl.addMember(newMember)">
+<form ng-show="new" class="col-md-5 newReg" ng-submit="mainCtrl.addProfile(newMember)">
   <input type="text" ng-model="newMember.password" class="col-lg-12" placeholder="Select a Password">
     <input type="text" ng-model="newMember.name" class="col-lg-12" placeholder="Name">
     <input type="text" ng-model="newMember.username" class="col-lg-12" placeholder="Select a username">

@@ -1,7 +1,7 @@
 (function () {
 "use Strict";
 angular.module('farmApp')
-.factory('MainService', function($http, $rootScope, $routeParams){
+.factory('MainService', function($http, $rootScope, $location, $routeParams){
 	
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
 	
@@ -15,12 +15,16 @@ angular.module('farmApp')
 	};
 
 	var addMember = function (newMember) {
-		console.log(newMember.name);
+		console.log(newMember.name , "member name");
+		console.log(newMember.category);
 		$http.post(server, newMember);
 	};
 
 	var deleteMember = function (id) {
+		console.log(id);
 		$http.delete(server + '/' + id);
+		//$location.path('#/admin');
+
 	};
 
 	var editMember = function (member, id) {
