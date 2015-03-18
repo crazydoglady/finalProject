@@ -32,6 +32,7 @@ angular.module('farmApp')
 		console.log(id);
 		console.log(member);
 		$http.put(server + '/' + id, member);
+		$location.path('/admin');
 	};
 	return	{
 		//public : private

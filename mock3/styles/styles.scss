@@ -4,28 +4,62 @@ $lemon: #dbcc37;
 $earth: #54483f;
 $tomato: #a62d1b;
 $eggplant: #2f2526;
+$dkbeige: #c7b773;
+$mdbeige: #e3db9a;
+$ltblue: #b1c2b3;
+$dkblue: #778691;
+$cream: #F5FCD0;
+$font:'Raleway', sans-serif;
 
 body {
 	margin: 0;
 	padding: 0;
-	color: $earth;
+	background: $cream;
+	font-family: $font;
 }
+h4 {
+	color: $celery;
+	display: inline-block;
+}
+a {
+	color: $celery;
+	&:hover {
+	color:$basil;
+	
+	}
+}
+nav li a:visited {
+	color: $lemon;
+	}
 
 header {
 	margin: 0;
 	padding: 0;
-	background: $eggplant;
+	background: $earth;
 	color: $celery;
 	h1{
 	margin: 0;
 	padding: 0;
+	font-size: 4em;
+	color: $dkbeige;
+	display: inline-block;
+	nav {
+	margin: 0;
+	padding: 0;
+	background: $earth;
+	a {
+	color: $celery;
+	}
    }
-}
+}}
 .splash img{
 	height: 400px;
 	margin: 0;
 	padding: 0;
 	display: inline-block; 
+}
+.mainSplash {
+	float: right;
 }
 ul{
 	margin: 0;
@@ -56,7 +90,7 @@ list-style-type: none;
 /*producers page */
 
 .prodIntro {
-	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/farmers.jpg');
+	background: linear-gradient(rgba(245, 252, 208, 0.8), rgba(245, 252, 208, 0.8)),url('../assets/farmers.jpg');
 	background-size: cover;
 }
 .register {
@@ -73,6 +107,15 @@ list-style-type: none;
 		margin: 0 0 0 5%;
 	}
 }	
+.listings {
+	color: $eggplant;
+	a {
+	color: $basil;
+	&:hover {
+	color: $tomato;
+	}
+	}
+}
 
 #queryBox {
 	height: 4em;
@@ -81,16 +124,26 @@ list-style-type: none;
 
 .joinUs {
 	margin: 33% 0 0 0;
-	background: $tomato;
+	background: $celery;
 	box-shadow: 3px 5px 7px $eggplant;
 
 }
 
 .restIntro {
-	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/swedishChef.jpg');
+	background: linear-gradient(rgba(245, 252, 208, 0.8), rgba(245, 252, 208, 0.8)),url('../assets/swedishChef.jpg');
 	background-size: cover;
 }
 .consumerIntro {
-	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url('../assets/consumer.jpg');
+	background: linear-gradient(rgba(245, 252, 208, 0.8), rgba(245, 252, 208, 0.8)),url('../assets/consumer.jpg');
 	background-size: cover;
 }
+
+
+footer {
+	background: $earth;
+}
+
+
+
+
+
