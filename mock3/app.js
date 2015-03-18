@@ -3,8 +3,7 @@
 
   angular.module('farmApp', [
     'ngRoute',
-    'farm',
-    //'auth'
+    'farm'
     //'restaurant'
     // 'consumer',    
     // 'admin'
@@ -23,12 +22,12 @@
       templateUrl: 'consumerFeature/profile.html',
       controller: 'MainController as CustCtrl'
     })
-     .when('/producer', {
+     .when('/farmer', {
       templateUrl: 'farmerFeature/farmers.html',
       controller: 'MainController as mainCtrl'
     })
-    .when('/producer/:memberId', {
-      templateUrl:'farmerFeature/profile.html',
+    .when('/farmer/:memberId', {
+      templateUrl:'farmerFeature/farmProfile.html',
       controller:'MainController as mainCtrl'
     })
     .when('/restaurant', {

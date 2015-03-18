@@ -4,19 +4,16 @@
 	<p><h3>We look forward to working with you!</h3></p>
   <button><a href="#">Already registered? Login here</a></button>
   <section class="registerMember col-lg-12 col-md-12 col-sm-12">
-  <button type="" ng-click="new =!new" class="newReg" class="btn btn-default">Join Now! </button>
+  <button type="" ng-show="!new" ng-click="new =!new" class="newReg" class="btn btn-default">Join Now! </button>
 <form ng-show="new" class="col-md-5 newReg" ng-submit="mainCtrl.addProfile(newMember)">
-  <input type="text" ng-model="newMember.password" class="col-lg-12" placeholder="Select a Password">
-    <input type="text" ng-model="newMember.name" class="col-lg-12" placeholder="Name">
-    <input type="text" ng-model="newMember.username" class="col-lg-12" placeholder="Select a username">
-    <input type="text" ng-model="newMember.location" class=" col-lg-12" placeholder="Location">
-    <input type="text" ng-model="newMember.description" class="col-lg-12" placeholder="Description">
-    <select name="" id="" ng-model="newMember.category">
+  <label for="select"><h4>Please select a membership category:</h4></label>
+   <select name="" id="" ng-model="newMember.category" required>
       <option value="producer">Producer</option>
       <option value="restaurant">Restaurant</option>
       <option value="consumer">Consumer</option>
     </select>
-    <input type="url" ng-model="newMember.website" class="col-lg-12" placeholder="website">
+    <input type="text" ng-model="newMember.name" class="col-lg-12" placeholder="Name">
+    <input type="text" ng-model="newMember.location" class=" col-lg-12" placeholder="Location">
     <input type="text" ng-model="newMember.email" class="col-lg-12" placeholder="email">
   <button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
 </form>

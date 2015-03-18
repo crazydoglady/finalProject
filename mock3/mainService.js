@@ -18,6 +18,7 @@ angular.module('farmApp')
 		console.log(newMember.name , "member name");
 		console.log(newMember.category);
 		$http.post(server, newMember);
+		$location.path('/admin');
 	};
 
 	var deleteMember = function (id) {
@@ -28,7 +29,9 @@ angular.module('farmApp')
 	};
 
 	var editMember = function (member, id) {
-		$http.put(server + '/' + id, member)
+		console.log(id);
+		console.log(member);
+		$http.put(server + '/' + id, member);
 	};
 	return	{
 		//public : private

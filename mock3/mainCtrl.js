@@ -24,7 +24,9 @@
 
       }
 
-      mainCtrl.editProfile = function(member){
+      mainCtrl.editProfile = function (member){
+        console.log(member , "edit Profile started");
+        console.log($routeParams.memberId);
       	MainService.editProfile(member, $routeParams.memberId);
       }
 
