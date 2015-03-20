@@ -1,22 +1,22 @@
 (function () {
 "use Strict";
-angular.module('farm')
-.factory('FarmService', function($http, $rootScope, $routeParams){
+angular.module('farmApp')
+.factory('RestaurantService', function( $http, $rootScope, $routeParams){
 	
-	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
+	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtrestaurants';
 	
-
 	var getRests = function () {
 		return $http.get(server);
 	};
 
 	var getOneRest = function (id) {
+		console.log(id , 'RestServId');
 		return $http.get(server + '/' + id);
 	};
 
-	var addRest = function (newProducer) {
-		console.log(newProducer.name);
-		$http.post(server, newProducer);
+	var addRest = function (newEats) {
+		console.log(newEats.name);
+		$http.post(server, newEats);
 	};
 
 	var deleteRest = function (id) {
@@ -28,11 +28,11 @@ angular.module('farm')
 	};
 	return	{
 		//public : private
-		getEatery: getRest,
-		getSingleEatery: getOneRest,
-		addEatery: addRest,
-		deleteEatery: deleteRest,
-		editEatery: editRest
+		getRestaurants: getRests,
+		getSingleRestaurant: getOneRest,
+		addRestaurant: addRest,
+		deleteRestaurant: deleteRest,
+		editRestaurant: editRest
 	}
 });
 

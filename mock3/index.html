@@ -2,33 +2,42 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>styles</title>
+	<title>VeggieTables</title>
 	<!-- Latest compiled and minified JavaScript -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body ng-app="farmApp">
-<header><h1>Farmstand</h1>
+<header class="col-lg-12 col-md-12 col-sm-12">
+	<span><h1>VeggieTables</h1></span>
 	<nav>
-		<li class="col-md-1 home"><a href="#/"><h5><i class="fa fa-home"></i>  Home</h5></a></li>
-		<li class="col-md-1 producer"><a href="#/producer"><h5><i class="fa fa-truck"></i> Producers</h5></a></li>
-		<li class="col-md-1 restaurant"><a href="#/restaurant"><h5><i class="fa fa-cutlery"></i>Restaurants</h5></a></li>
-		<li class="col-md-1 consumer"><a href="#/consumer"><h5><i class="fa fa-users"></i>Consumers</h5></a></li>
-		<li class="col-md-1 login"><a href="#/auth"><h5><i class="fa fa-unlock"></i> Login</h5></a></li>
-		<li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>
+		<ul>
+			<li class="col-lg-2 col-md-2 col-sm-2 home"><a href="#/"><h5>  Home</h5></a></li>
+			<li class="col-lg-2 col-md-2 col-sm-2 producer"><a href="#/farmers"><h5>Producers</h5></a></li>
+			<li class="col-lg-2 col-md-2 col-sm-2 restaurant"><a href="#/restaurant"><h5>Restaurants</h5></a></li>
+			<li class="col-lg-2 col-md-2 col-sm-2 consumer"><a href="#/consumer"><h5>Consumers</h5></a></li>
+			<li class="col-lg-1 col-md-1 col-sm-1 contact"><a href="#/contact"><h5> Contact</h5></a></li>
+			<li class="col-md-1">
+				<form class="col-md-3 newReg" ng-submit="indexCtrl.submitSignUpAct">
+    				 <input type="text" ng-model="signUpEmail" class="col-lg-12" placeholder="Enter Email">
+     				<input type="text" ng-model="signUpPassword" class="col-lg-12" placeholder="Enter Password">
+     				<input type="text" ng-model="signUpPasswordConfirmation" class="col-lg-12" placeholder="Confirm Password">
+     				<button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
+     			</form>
+     		</li>
+		</ul>
 	</nav>
 
 </header>
 <div class="container col-sm-12 col-md-12 col-lg-12">
 
-<ng-view></ng-view>	
+<ng-view class="page {{ pageClass }}"></ng-view>	
 	
 </div><!--end container-->
-<footer class="col-md-12">
-	<nav>
-		<ul>
+<!-- <footer class="col-md-12">
 			<li class="col-md-3">
 				<a href="#/producer"><h3>Producers</h3></a>
 			</li>
@@ -41,26 +50,31 @@
 			<li class="col-md-3">
 				<a href="#/consumer"><h3>Consumers</h3></a>
 			</li>
-		</ul>
-	</nav>
-</footer>
+</footer> -->
+
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<!-- <script src='bower_components/angular-google-maps/dist/lodash[.min].js'></script> -->
-<script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+
 <script src="app.js"></script>
 <script src="mainCtrl.js"></script>
 <script src="mainService.js"></script>
-<!-- <script src="../directives/directives.js"></script>
-<script src="../directives/directiveService.js"></script>
-<script src="../directives/directiveController.js"></script> -->
-<script src="../farmerFeature/farm.js"></script>
+<!-- <script src='bower_components/angular-google-maps/dist/lodash[.min].js'></script> -->
+<!-- <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script> -->
+<!-- <script src="../farmerFeature/farm.js"></script>
 <script src="../farmerFeature/farmerCtrl.js"></script>
-<script src="../farmerFeature/farmerService.js"></script>
+<script src="../farmerFeature/farmerService.js"></script> -->
+<!-- <script src="../restaurantFeature/restService.js"></script> -->
+<!-- <script src="../restaurantFeature/restaurant.js"></script> -->
+<!-- <script src="../restaurantFeature/restCtrl.js"></script> -->
+
+
 
 
 </body>

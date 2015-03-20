@@ -1,29 +1,29 @@
 (function () {
   "use strict";
-  angular.module('farm')
-    .controller('FarmController', function (FarmService, $location, $routeParams) {
-      var farmCtrl = this;
+  angular.module('restaurant')
+    .controller('RestaurantController', function (RestaurantService, $location, $routeParams) {
+      var restCtrl = this;
        
-       FarmService.getProducers().success(function(data){
-       	farmCtrl.producers = data;
+       RestaurantService.getEateries().success(function(data){
+       	restCtrl.getEateries = data;
        });
       
-      FarmService.getSingleProducer($routeParams.itemId).success(function(data){
-      	farmCtrl.SingleProducer = data;
+      RestaurantService.getSingleEatery($routeParams.itemId).success(function(data){
+      	restCtrl.SingleEatery = data;
       });
 
-      farmCtrl.addProducer = function (newFarm){
-      	console.log(newFarm);
-      	FarmService.addProducer(newFarm);
-      	$location.path('producer/:producerId');
+      restCtrl.addEatery = function (newRest){
+      	console.log(newRest);
+      	RestaurantService.addEatery(newRest);
+      	$location.path('/restaurants');
       }
 
-      farmCtrl.deleteProducer = function (producer) {
-      	FarmService.deleteFarm(producer);
+      restCtrl.deleteEatery = function (restaurant) {
+      	RestaurantService.deleteEatery(restaurant);
       }
 
-      farmCtrl.editProducer = function(producer){
-      	FarmService.editFarm(producer, $routeParams.FarmId);
+      restCtrl.editEatery = function(restaurant){
+      	RestaurantService.editEatery(restaurant, $routeParams.eateryId);
       }
 
 	});

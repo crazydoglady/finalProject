@@ -1,0 +1,21 @@
+<section id="growers" class="col-lg-5 col-md-5 col-sm-5" ng-controller="FarmController as farmCtrl">
+		<h2>Registered Local Growers: </h2>
+
+		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
+		<article class="listings" ng-repeat="producer in farmCtrl.producers  | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+			<img ng-src="{{producer.photo}}">
+		<h3><a href="#/farmers/{{producer._id}}">{{producer.name}}  <i class="fa fa-chevron-right"></i></a></h3>
+		<h4>{{producer.location}}</h4>
+		</article>
+</section>
+<section id="restaurants" class="col-lg-5 col-md-5 col-sm-5" ng-controller="RestaurantController as restCtrl">
+	<ul class="col-lg-12 col-md-12 col-sm-12">
+		<h2>Restaurant Network: </h2>
+		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
+		<li class="listings" ng-repeat="restaurant in restCtrl.restaurants| orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+		<h3><a href="#/restaurant/{{restaurant._id}}">{{restaurant.name}}  <i class="fa fa-chevron-right"></i></a></h3>
+		<h4>{{restaurant.location}}</h4>
+		<img ng-src="{{restaurant.photo}}">
+		</li>
+	</ul>
+</section>
