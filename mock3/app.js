@@ -3,11 +3,15 @@
 
   angular.module('farmApp', [
     'ngRoute',
-    // 'consumer',
-    // 'producer',
-    // 'restaurant',
+    'ngAnimate',
+    'ui.bootstrap'
+    // 'farm',
+    // 'consumer',    
     // 'admin'
   ])
+  //.config(function($httpProvider){
+  //   $httpProvider.defaults.headers.common['X-Csrf-Token'] = $("meta[name=csrf-token]").attr("content");
+  // })//this needed to do CRUD on rails backend
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
@@ -15,28 +19,44 @@
       controller: 'MainController as mainCtrl'
     })
     .when('/consumer', {
-      templateUrl: 'consumerFeature/consumer.html',
-      controller: 'ConsumerController as CustCtrl'
+      templateUrl: 'consumerFeature/consumers.html',
+      controller: 'MainController as CustCtrl'
     })
      .when('/consumer/:custId', {
       templateUrl: 'consumerFeature/profile.html',
-      controller: 'ConsumerController as CustCtrl'
+      controller: 'MainController as CustCtrl'
     })
-    .when('/producer', {
-      templateUrl: 'farmerFeature/farmers.html',
-      controller: 'farmerController as farmCtrl'
+    .when('/register', {
+      templateUrl: 'views/register.html',
+      controller: 'MainController as mainCtrl'
     })
-    .when('/producer/:producerId', {
-      templateUrl: 'farmerFeature/profile.html',
-      controller: 'farmerControler as farmCtrl'
+    .when('/contact', {
+      templateUrl: 'views/contact.html',
+      controller: 'MainController as mainCtrl'
+      })
+    .when('/admin', {
+      templateUrl:'views/admin.html',
+      controller: 'MainController as mainCtrl'
+    })
+    .when('/admin/:memberId', {
+      templateUrl:'views/adminprofile.html',
+      controller: 'MainController as mainCtrl'
     })
     .when('/restaurant', {
-      templateUrl: 'restaurantFeature/restaurant.html',
-      controller: 'restaurantController as restCtrl'
+      templateUrl: 'restaurantFeature/restaurants.html',
+      controller: 'RestaurantController as restCtrl'
     })
     .when('/restaurant/:restaurantId', {
       templateUrl: 'restaurantFeature/profile.html',
-      controller: 'restaurantController as restCtrl'
+      controller: 'RestaurantController as restCtrl'
+    })
+    .when('/farmers', {
+      templateUrl: 'farmerFeature/farmers.html',
+      controller: 'FarmController as farmCtrl'
+    })
+    .when('/farmers/:farmerId', {
+      templateUrl:'farmerFeature/farmProfile.html',
+      controller:'FarmController as farmCtrl'
     })
     .when('/not_found', {
       templateUrl: 'views/not_found.html',
@@ -47,4 +67,7 @@
     })//end otherwise, this is equivalent to if/else statement in vanilla javascript
   });//end config
 
-})();
+})(); //end main module =================
+
+
+
