@@ -10,12 +10,13 @@ angular.module('farmApp')
 	};
 
 	var getOneRest = function (id) {
+		console.log(id , 'RestServId');
 		return $http.get(server + '/' + id);
 	};
 
-	var addRest = function (newProducer) {
-		console.log(newProducer.name);
-		$http.post(server, newProducer);
+	var addRest = function (newEats) {
+		console.log(newEats.name);
+		$http.post(server, newEats);
 	};
 
 	var deleteRest = function (id) {
@@ -27,11 +28,11 @@ angular.module('farmApp')
 	};
 	return	{
 		//public : private
-		getEateries: getRests,
-		getSingleEatery: getOneRest,
-		addEatery: addRest,
-		deleteEatery: deleteRest,
-		editEatery: editRest
+		getRestaurants: getRests,
+		getSingleRestaurant: getOneRest,
+		addRestaurant: addRest,
+		deleteRestaurant: deleteRest,
+		editRestaurant: editRest
 	}
 });
 

@@ -49,7 +49,7 @@
       templateUrl: 'restaurantFeature/restaurants.html',
       controller: 'RestaurantController as restCtrl'
     })
-    .when('/restaurant/:memberId', {
+    .when('/restaurant/:restaurantId', {
       templateUrl: 'restaurantFeature/profile.html',
       controller: 'RestaurantController as restCtrl'
     })

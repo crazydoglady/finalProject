@@ -1,19 +1,19 @@
 <div class="container">
-<h2>{{mainCtrl.SingleMember.name}}</h2>
+<h2>{{restCtrl.SingleRestaurant.name}}</h2>
 </div>
-<form ng-submit="mainCtrl.editProfile(mainCtrl.SingleMember)">
+<form ng-submit="restCtrl.editRestaurant(restCtrl.SingleRestaurant)">
 		<label for="">Name</label>
-		<input type="text" ng-model="mainCtrl.SingleMember.name">
+		<input type="text" ng-model="restCtrl.SingleRestaurant.name">
 		<label for="">Location</label>
-		<input type="text" ng-model="mainCtrl.SingleMember.location">
+		<input type="text" ng-model="restCtrl.SingleRestaurant.location">
 		<label for="">Email</label>
-		<input type="text" ng-model="mainCtrl.SingleMember.email">
+		<input type="text" ng-model="restCtrl.SingleRestaurant.email">
 		<label for="">Photo</label>
-		<input type="url" ng-model="mainCtrl.SingleMember.photo">
+		<input type="url" ng-model="restCtrl.SingleRestaurant.photo">
 		<label for="">Website</label>
-		<input type="url" ng-model="mainCtrl.SingleMember.website">
+		<input type="url" ng-model="restCtrl.SingleRestaurant.website">
 		<label for="">Description</label>
-		<textarea name="description" id="" cols="30" rows="10" ng-model="mainCtrl.SingleMember.description"></textarea>
+		<textarea name="description" id="" cols="30" rows="10" ng-model="restCtrl.SingleRestaurant.description"></textarea>
 		<button action="submit">Save Changes</button>
 	</form>
 </div>

@@ -8,10 +8,10 @@
 	<ul class="col-lg-12 col-md-12 col-sm-12">
 		<h2>Our Network of local Eateries: </h2>
 		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
-		<li class="listings" ng-repeat="eatery in restCtrl.eateries| orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
-		<h3><a href="#/restaurant/{{eatery._id}}">{{eatery.name}}  <i class="fa fa-chevron-right"></i></a></h3>
-		<h4>{{eatery.location}}</h4>
-		<img ng-src="{{eatery.photo}}">
+		<li class="listings" ng-repeat="restaurant in restCtrl.restaurants| orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+		<h3><a href="#/restaurant/{{restaurant._id}}">{{restaurant.name}}  <i class="fa fa-chevron-right"></i></a></h3>
+		<h4>{{restaurant.location}}</h4>
+		<img ng-src="{{restaurant.photo}}">
 		</li>
 	</ul>
 </section>

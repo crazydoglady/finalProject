@@ -34,26 +34,28 @@
     .controller('RestaurantController', function (RestaurantService, $location, $routeParams) {
       var restCtrl = this;
        
-       RestaurantService.getEateries().success(function(data){
-        restCtrl.Eateries = data;
+       RestaurantService.getRestaurants().success(function(data){
+        restCtrl.restaurants = data;
        });
       
-      RestaurantService.getSingleEatery($routeParams.eateryId).success(function(data){
-        restCtrl.SingleEatery = data;
+      RestaurantService.getSingleRestaurant($routeParams.restaurantId).success(function(data){
+        restCtrl.SingleRestaurant = data;
       });
 
-      restCtrl.addEatery = function (newRest){
+      restCtrl.addRestaurant = function (newRest){
         console.log(newRest);
-        RestaurantService.addEatery(newRest);
+        RestaurantService.addRestaurant(newRest);
         $location.path('/restaurant');
       }
 
-      restCtrl.deleteEatery = function (restaurant) {
-        RestaurantService.deleteEatery(restaurant);
+      restCtrl.deleteRestaurant = function (restaurant) {
+        RestaurantService.deleteRestaurant(restaurant);
       }
 
-      restCtrl.editEatery = function(restaurant){
-        RestaurantService.editEatery(restaurant, $routeParams.eateryId);
+      restCtrl.editRestaurant = function(restaurant){
+        console.log(restaurant);
+        console.log($routeParams, 'restCtrl');
+        RestaurantService.editRestaurant(restaurant, $routeParams.restaurantId);
       }
 
   })

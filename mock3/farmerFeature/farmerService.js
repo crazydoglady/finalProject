@@ -23,6 +23,7 @@ angular.module('farm')
 
 	var editFarm = function (producer, id) {
 		console.log(producer);
+		console.log(id, "editFarmSVC")
 		$http.put(server + '/' + id, producer)
 	};
 	return	{

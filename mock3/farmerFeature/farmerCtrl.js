@@ -8,7 +8,7 @@
        	farmCtrl.producers = data;
        });
       
-      FarmService.getSingleProducer($routeParams.producerId).success(function(data){
+      FarmService.getSingleProducer($routeParams.farmerId).success(function(data){
       	farmCtrl.SingleProducer = data;
       });
 
@@ -23,7 +23,9 @@
       // }
 
       farmCtrl.editProducer = function(producer){
-      	FarmService.editProducer(producer, $routeParams.FarmerId);
+        console.log(producer);
+        console.log($routeParams.farmerId);
+      	FarmService.editProducer(producer, $routeParams.farmerId);
       }
 
 	});
