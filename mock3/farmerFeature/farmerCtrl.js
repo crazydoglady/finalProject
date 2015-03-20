@@ -1,10 +1,10 @@
 (function () {
   "use strict";
-  angular.module('farm')
-    .controller('FarmController', function (FarmService, $location, $routeParams) {
+  angular.module('farmApp')
+    .controller('FarmController', function (FarmService, $location, $routeParams, $scope) {
       var farmCtrl = this;
        
-       FarmService.getProducers().success(function(data){
+      FarmService.getProducers().success(function(data){
        	farmCtrl.producers = data;
        });
       
@@ -15,15 +15,15 @@
       farmCtrl.addProducer = function (newFarm){
       	console.log(newFarm);
       	FarmService.addProducer(newFarm);
-      	$location.path('producer/:producerId');
+        $location.path('/farmers');
       }
 
-      farmCtrl.deleteProducer = function (producer) {
-      	FarmService.deleteFarm(producer);
-      }
+      // farmCtrl.deleteProducer = function (producer) {
+      // 	FarmService.deleteProducer(producer);
+      // }
 
       farmCtrl.editProducer = function(producer){
-      	FarmService.editFarm(producer, $routeParams.FarmId);
+      	FarmService.editProducer(producer, $routeParams.FarmerId);
       }
 
 	});

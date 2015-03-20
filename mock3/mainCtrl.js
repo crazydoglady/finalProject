@@ -1,11 +1,11 @@
 (function () {
   "use strict";
   angular.module('farmApp')
-    .controller('MainController', function (MainService, $location, $routeParams, $route, $scope) {
+    .controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
-
-       MainService.getProfiles().success(function(data){
-       	mainCtrl.members = data;
+ 
+      MainService.getProfiles().success(function(data){
+       mainCtrl.members = data;
        });
       
       MainService.getSingleProfile($routeParams.memberId).success(function(data){
@@ -30,9 +30,32 @@
       	MainService.editProfile(member, $routeParams.memberId);
       }
 
-	});
+	})
+    .controller('RestaurantController', function (RestaurantService, $location, $routeParams) {
+      var restCtrl = this;
+       
+       RestaurantService.getEateries().success(function(data){
+        restCtrl.Eateries = data;
+       });
+      
+      RestaurantService.getSingleEatery($routeParams.eateryId).success(function(data){
+        restCtrl.SingleEatery = data;
+      });
 
+      restCtrl.addEatery = function (newRest){
+        console.log(newRest);
+        RestaurantService.addEatery(newRest);
+        $location.path('/restaurant');
+      }
 
+      restCtrl.deleteEatery = function (restaurant) {
+        RestaurantService.deleteEatery(restaurant);
+      }
 
+      restCtrl.editEatery = function(restaurant){
+        RestaurantService.editEatery(restaurant, $routeParams.eateryId);
+      }
+
+  })
 
 })();

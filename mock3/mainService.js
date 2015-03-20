@@ -16,9 +16,14 @@ angular.module('farmApp')
 
 	var addMember = function (newMember) {
 		console.log(newMember.name , "member name");
-		console.log(newMember.category);
 		$http.post(server, newMember);
-		$location.path('/admin');
+		if (newMember.category === 'producer') {
+			$location.path('/farmers');
+		} else if (newMember.category === 'consumer') {
+			$location.path('/consumer');
+		} else if (newMember.category === 'restaurant') {
+			$location.path('/restaurant');
+		}
 	};
 
 	var deleteMember = function (id) {
@@ -43,7 +48,12 @@ angular.module('farmApp')
 		editProfile: editMember
 	}
 });
-
-
-
 })();//end big function
+
+//==================end mainService ===============
+
+
+
+
+
+

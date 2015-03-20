@@ -2,7 +2,8 @@
   "use strict";
 
   angular.module('farm', [
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
     // 'consumer',
     // 'producer',
     // 'restaurant',
@@ -10,13 +11,13 @@
   ])
   .config(function ($routeProvider){
   	$routeProvider
-   .when('/producer', {
+    .when('/farmers', {
       templateUrl: 'farmerFeature/farmers.html',
-      controller: 'MainController as mainCtrl'
+      controller: 'FarmController as farmCtrl'
     })
-    .when('/producer/:producerId', {
-      templateUrl:'farmerFeature/profile.html',
-      controller:'MainController as mainCtrl'
+    .when('/farmers/:farmerId', {
+      templateUrl:'farmerFeature/farmProfile.html',
+      controller:'FarmController as farmCtrl'
     })
   });//end config
   })();//end farm.js

@@ -1,11 +1,10 @@
 (function () {
 "use Strict";
-angular.module('farm')
-.factory('FarmService', function($http, $rootScope, $routeParams){
+angular.module('farmApp')
+.factory('RestaurantService', function( $http, $rootScope, $routeParams){
 	
-	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
+	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtrestaurants';
 	
-
 	var getRests = function () {
 		return $http.get(server);
 	};
@@ -28,7 +27,7 @@ angular.module('farm')
 	};
 	return	{
 		//public : private
-		getEatery: getRest,
+		getEateries: getRests,
 		getSingleEatery: getOneRest,
 		addEatery: addRest,
 		deleteEatery: deleteRest,
