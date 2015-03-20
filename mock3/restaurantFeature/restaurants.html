@@ -6,9 +6,10 @@
   <p></p>
   <section id="restaurants" class="col-lg-8 col-md-8 col-sm-8">
 	<ul class="col-lg-12 col-md-12 col-sm-12">
-		<h2>Our Network of local Eateries: </h2>
+		<div class="category"><h2>Our Network of local Eateries: </h2>
 		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
-		<li class="listings" ng-repeat="restaurant in restCtrl.restaurants| orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+		 </div>
+		<li class="listings col-lg-5 col-md-6 col-sm-12" ng-repeat="restaurant in restCtrl.restaurants| orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
 		<h3><a href="#/restaurant/{{restaurant._id}}">{{restaurant.name}}  <i class="fa fa-chevron-right"></i></a></h3>
 		<h4>{{restaurant.location}}</h4>
 		<img ng-src="{{restaurant.photo}}">

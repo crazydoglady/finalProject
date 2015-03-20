@@ -4,7 +4,8 @@
   angular.module('farmApp', [
     'ngRoute',
     'ngAnimate',
-    'farm',
+    'ui.bootstrap'
+    // 'farm',
     // 'consumer',    
     // 'admin'
   ])
@@ -33,10 +34,6 @@
       templateUrl: 'views/contact.html',
       controller: 'MainController as mainCtrl'
       })
-    .when('/auth', {
-      templateUrl: 'views/auth.html',
-      controller: 'MainController as mainCtrl'
-    })
     .when('/admin', {
       templateUrl:'views/admin.html',
       controller: 'MainController as mainCtrl'
@@ -52,6 +49,14 @@
     .when('/restaurant/:restaurantId', {
       templateUrl: 'restaurantFeature/profile.html',
       controller: 'RestaurantController as restCtrl'
+    })
+    .when('/farmers', {
+      templateUrl: 'farmerFeature/farmers.html',
+      controller: 'FarmController as farmCtrl'
+    })
+    .when('/farmers/:farmerId', {
+      templateUrl:'farmerFeature/farmProfile.html',
+      controller:'FarmController as farmCtrl'
     })
     .when('/not_found', {
       templateUrl: 'views/not_found.html',
