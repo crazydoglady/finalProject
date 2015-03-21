@@ -4,7 +4,8 @@
   angular.module('farmApp', [
     'ngRoute',
     'ngAnimate',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'uiGmapgoogle-maps'
     // 'farm',
     // 'consumer',    
     // 'admin'

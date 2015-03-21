@@ -91,4 +91,9 @@
 
   })
 
+    .controller('GoogleMapsController', function($scope){
+      var mapCtrl = this;
+      $scope.map = {center: {latitude: 32.8, longitude: -79.8}, zoom: 12};
+    })
+
 })();
