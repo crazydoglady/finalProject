@@ -2,11 +2,14 @@
 <html ng-app="farmApp">
 <head>
     <title>angular-restart</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+ 
+
+  
+
+  <link rel="stylesheet" href="assets/styles.css">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ 
 </head>
 <header><h1>Farmstand</h1>
   <nav>
@@ -15,7 +18,9 @@
     <li class="col-md-1 restaurant"><a href="#/restaurant"><h5><i class="fa fa-cutlery"></i>Restaurants</h5></a></li>
     <li class="col-md-1 consumer"><a href="#/consumer"><h5><i class="fa fa-users"></i>Consumers</h5></a></li>
     <li class="col-md-1 login"><a href="#/auth"><h5><i class="fa fa-unlock"></i> Login</h5></a></li>
-    <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>
+    <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>   
+    <li class="col-md-1 contact"><a href="/users/sign_up"><h5><i class="fa fa-lightbulb-o"></i> Sign Up </h5></a></li>
+    <li class="col-md-1 contact"><a href="#/login"><h5><i class="fa fa-lightbulb-o"></i> Log In </h5></a></li>
   </nav>
 
 </header>
@@ -26,7 +31,8 @@
   
 </div>
 
-
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>
@@ -49,5 +55,5 @@
   </nav>
   <h6>This application was built by the JVsquad. Iron Yard 2015</h6>
 </footer>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </html>

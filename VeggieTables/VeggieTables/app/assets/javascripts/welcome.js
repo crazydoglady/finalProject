@@ -1,7 +1,11 @@
 var farmApp = angular
-  .module('farmApp', ['ngRoute'])
+  .module('farmApp', ['ngRoute', 'Devise'])
   .config(function($httpProvider){
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $("meta[name=csrf-token").attr("content");
+  })
+
+  .config(function(AuthProvider){
+
   })
   .config(function($routeProvider){
     $routeProvider
@@ -25,7 +29,14 @@ var farmApp = angular
         templateUrl: 'assets/templates/contact.html',
         controller: 'indexCtrl'
       })
-
+      .when('users/sign_up',{
+        templateUrl: 'assets/templates/auth.html',
+        controller: 'indexCtrl'
+      })
+      .when('/login',{
+        templateUrl: 'assets/templates/login.html',
+        controller: 'indexCtrl'
+      })
       .when ('/not_found',{
         templateUrl: 'assets/templates/not_found.html',
         controller: 'indexCtrl'
