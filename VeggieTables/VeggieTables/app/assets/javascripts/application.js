@@ -16,5 +16,6 @@
 //= require angular-route.min
 //= require underscore.min
 //= require bootstrap
+//= require devise
 //= require welcome
 //= require controllers/indexCtrl.js
