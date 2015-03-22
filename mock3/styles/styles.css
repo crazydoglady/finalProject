@@ -10,10 +10,6 @@
   animation: slideOutLeft 2s both ease-in;
   z-index: 9999; }
 
-body {
-  /*background: url('../assets/background-barn-wood.jpg');
-  background-size: cover;*/ }
-
 header {
   background: #574C4A;
   color: #adc240; }
@@ -94,7 +90,7 @@ header {
 
 #cabbage {
   position: absolute;
-  margin: 47% 0 0 0;
+  margin: 36% 0 0 16%;
   z-index: 2;
   -ms-transform: rotate(-7deg);
   /* IE 9 */
@@ -121,13 +117,13 @@ header {
 
 #sign {
   position: absolute;
-  margin: 92% 0 0 1%;
+  margin: 63% 0 0 3%;
   z-index: 4;
-  -ms-transform: rotate(17deg);
+  -ms-transform: rotate(-17deg);
   /* IE 9 */
-  -webkit-transform: rotate(17deg);
+  -webkit-transform: rotate(-17deg);
   /* Chrome, Safari, Opera */
-  transform: rotate(17deg); }
+  transform: rotate(-17deg); }
   #sign:hover {
     z-index: 12;
     -ms-transform: rotate(0deg);
@@ -136,6 +132,10 @@ header {
     /* Chrome, Safari, Opera */
     transform: rotate(0deg); }
 
+.background {
+  background: url("../assets/background-barn-wood.jpg");
+  background-size: cover; }
+
 .page {
   bottom: 0;
   padding-top: 200px;
@@ -143,7 +143,6 @@ header {
   width: 100%; }
 
 .page-main {
-  background: #00D0BC;
   color: #00907c; }
 
 .page-restaurants {

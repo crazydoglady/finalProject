@@ -51,7 +51,9 @@
       }
 
       restCtrl.deleteRestaurant = function (restaurant) {
-        RestaurantService.deleteRestaurant(restaurant);
+        console.log(restaurant, "deleted");
+        console.log(restaurant._id);
+        RestaurantService.deleteRestaurant(restaurant._id);
       }
 
       restCtrl.editRestaurant = function(restaurant){
@@ -79,9 +81,11 @@
         $location.path('/farmers');
       }
 
-      // farmCtrl.deleteProducer = function (producer) {
-      //  FarmService.deleteProducer(producer);
-      // }
+      farmCtrl.deleteProducer = function (producer) {
+        console.log(producer , "deleted");
+        console.log(producer._id);
+       FarmService.deleteProducer(producer._id);
+      }
 
       farmCtrl.editProducer = function(producer){
         console.log(producer);

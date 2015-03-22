@@ -19,8 +19,7 @@ $font:'Raleway', sans-serif;
 .ng-enter { animation: scaleUp 2s both ease-in; z-index: 8888; }
 .ng-leave { animation: slideOutLeft 2s both ease-in; z-index: 9999; }
 body{ 
-	/*background: url('../assets/background-barn-wood.jpg');
-	background-size: cover;*/
+	
 }
 header {
 	background: $dkgrey;
@@ -94,7 +93,7 @@ header {
 }
 #cabbage {
 	position: absolute;
-	margin: 47% 0 0 0;
+	margin: 36% 0 0 16%;
 	z-index: 2;
 	-ms-transform: rotate(-7deg); /* IE 9 */
     -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
@@ -116,11 +115,11 @@ header {
 }
 #sign {
 	position: absolute;
-	margin: 92% 0 0 1%;
+	margin: 63% 0 0 3%;
 	z-index: 4;
-	-ms-transform: rotate(17deg); /* IE 9 */
-    -webkit-transform: rotate(17deg); /* Chrome, Safari, Opera */
-    transform: rotate(17deg);
+	-ms-transform: rotate(-17deg); /* IE 9 */
+    -webkit-transform: rotate(-17deg); /* Chrome, Safari, Opera */
+    transform: rotate(-17deg);
     &:hover {
     	z-index: 12;
 		-ms-transform: rotate(0deg); /* IE 9 */
@@ -128,6 +127,11 @@ header {
     	transform: rotate(0deg);
 		}
 }
+.background {
+	background: url('../assets/background-barn-wood.jpg');
+	background-size: cover;
+}
+	
 .page{
 	bottom:0; 
     padding-top:200px;
@@ -135,11 +139,7 @@ header {
     width:100%;
 }
 .page-main  {
-	background:#00D0BC;
 	color:#00907c;
-	img {
-	
-	}
 }
 .page-restaurants{
 	background:#E59400; 
