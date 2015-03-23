@@ -1,10 +1,10 @@
-farmApp.controller('indexCtrl', ['$location', '$scope', '$routeParams', 'Auth', 
+farmApp.controller('indexCtrl', ['$location', '$scope', '$routeParams', 'Auth',
 function($scope, $location, $routeParams, Auth){
   console.log("in controller");
   $scope.some_text ={name:"Farmer Ted", city: "Charleston"};
 
   $scope.pageClass = 'page-main';
-  
+
   $scope.signUp = function() {
     $location.url('/users/sign_up')
   };
@@ -23,11 +23,11 @@ function($scope, $location, $routeParams, Auth){
     });
 
   };
-  
+
   $scope.loggedIn = function(){
     return Auth.isAuthenticated();
   };
-  
+
   $scope.setUser = function(){
     Auth.currentUser().then(function(user){
       $scope.currentUser = user;
