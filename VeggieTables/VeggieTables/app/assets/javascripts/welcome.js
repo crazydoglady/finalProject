@@ -9,14 +9,13 @@ var farmApp = angular
   })
 
   .config(function(AuthProvider){
-      AuthProvider.logoutPath('users/sign_out.json');
-      AuthProvider.logoutMethod('GET');
+    
   })
   .config(function($routeProvider){
     $routeProvider
     .when ('/', {
       templateUrl: 'assets/templates/index.html',
-      controller: 'indexCtrl'
+      controller: 'indexCtrl as index'
     })
     .when('/consumer', {
       templateUrl: 'assets/templates/consumers.html',
@@ -62,41 +61,21 @@ var farmApp = angular
       templateUrl:'assets/templates/farmProfile.html',
       controller:'FarmController as farmCtrl'
     })
-
-      // .when ('/producer', {
-      //   templateUrl: 'assets/templates/farmers.html',
-      //   controller: 'indexCtrl'
-      // })
-      // .when ('/restaurant', {
-      //   templateUrl: 'assets/templates/restaurants.html',
-      //   controller: 'indexCtrl'
-      // })
-      // .when ('/register', {
-      //   templateUrl: 'assets/templates/register.html',
-      //   controller: 'indexCtrl'
-      // })
-      // .when ('/contact',{
-      //   templateUrl: 'assets/templates/contact.html',
-      //   controller: 'indexCtrl'
-      // })
-      .when('users/sign_up',{
-        templateUrl: 'assets/templates/auth.html',
-        controller: 'indexCtrl'
-      })
-      .when('users/sign_in',{
-        templateUrl: 'assets/templates/login.html',
-        controller: 'indexCtrl'
-      })
-      .when('users/sign_out', {
-        templateUrl: 'assets/templates/index.html',
-        controller: 'indexCtrl'
-      })
-      .when('/not_found',{
-        templateUrl: 'assets/templates/not_found.html',
-        controller: 'indexCtrl'
-      })
-     .otherwise ({
-        templateUrl: 'assets/templates/not_found.html',
-        controller: 'indexCtrl'
-      })
+      
+    .when('users/sign_up',{
+      templateUrl: 'assets/templates/auth.html',
+      controller: 'indexCtrl'
+    })
+    .when('users/sign_in',{
+      templateUrl: 'assets/templates/login.html',
+      controller: 'indexCtrl'
+    })
+    .when('/not_found',{
+      templateUrl: 'assets/templates/not_found.html',
+      controller: 'indexCtrl'
+    })
+    .otherwise ({
+      templateUrl: 'assets/templates/not_found.html',
+      controller: 'indexCtrl'
+    })
   })

@@ -24,9 +24,9 @@
     <li class="col-md-1 signup"><a href="/users/sign_up"><h5><i class="fa fa-lightbulb-o"></i> Sign Up </h5></a></li>
     <li class="col-md-1 login"><a href="/users/sign_in"><h5><i class="fa fa-lightbulb-o"></i>Log In</h5></a></li>
 
-    
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 
-    <button ng-click="submitLogoutAct(user)">Log Out</button>
+    
   </ul>
 
   </nav>
