@@ -12,9 +12,7 @@ $grey: #A69F99;
 $dkgrey: #574C4A;
 $font:'Raleway', sans-serif;
 
-* {
-  border: 1px solid green;
-}
+
 .ng-enter { animation: scaleUp 2s both ease-in; z-index: 8888; }
 .ng-leave { animation: slideOutLeft 2s both ease-in; z-index: 9999; }
 
@@ -25,6 +23,8 @@ header {
   background: $dkgrey;
   color: $celery;
   h1 {
+    background: $dkgrey;
+    color: $celery;
     font-size: 4em;
     margin: 0 0 0 2%;
   }
