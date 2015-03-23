@@ -5,7 +5,8 @@ var farmApp = angular
   })
 
   .config(function(AuthProvider){
-
+      AuthProvider.logoutPath('users/sign_out.json');
+      AuthProvider.logoutMethod('GET');
   })
   .config(function($routeProvider){
     $routeProvider
@@ -39,8 +40,7 @@ var farmApp = angular
       })
       .when('users/sign_out', {
         templateUrl: 'assets/templates/index.html',
-        controller: 'indexCtrl',
-        method: 'DELETE'
+        controller: 'indexCtrl'
       })
       .when('/not_found',{
         templateUrl: 'assets/templates/not_found.html',

@@ -2,14 +2,14 @@
 <html ng-app="farmApp">
 <head>
     <title>VeggieTables</title>
- 
+
 <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/styles.css">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
- 
+
 </head>
   <span><h1>VeggieTables</h1></span>
   <nav>
@@ -32,7 +32,7 @@
     <li class="col-md-1 producer"><a href="#/producer"><h5><i class="fa fa-truck"></i> Producers</h5></a></li>
     <li class="col-md-1 restaurant"><a href="#/restaurant"><h5><i class="fa fa-cutlery"></i>Restaurants</h5></a></li>
     <li class="col-md-1 consumer"><a href="#/consumer"><h5><i class="fa fa-users"></i>Consumers</h5></a></li>
-    <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>   
+    <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>
     <li class="col-md-1 signup"><a href="/users/sign_up"><h5><i class="fa fa-lightbulb-o"></i> Sign Up </h5></a></li>
     <li class="col-md-1 login"><a href="/users/sign_in"><h5><i class="fa fa-lightbulb-o"></i>Log In</h5></a></li>
     <button ng-click="submitLogoutAct(user)">Log Out</button>
@@ -41,8 +41,8 @@
 
 </header>
 <div class="container col-sm-12 col-md-12 col-lg-12">
-<ng-view></ng-view> 
-  
+<ng-view></ng-view>
+
 </div>
 
 <p class="notice"><%= notice %></p>
@@ -54,7 +54,7 @@
       <li class="col-md-3">
         <a href="#/producer"><h3>Producers</h3></a>
       </li>
-      <li class="col-md-3"> 
+      <li class="col-md-3">
         <a href="#/restaurant"><h3>  Restaurants</h3></a>
       </li>
       <li class="col-md-3">
@@ -66,11 +66,11 @@
     </ul>
   </nav>
 </footer> -->
-<script src="assets/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="../../../bower_components/angular-animate/angular-animate.js"></script>
+<script src="assets/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="assets/angular-animate/angular-animate.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-<script src='../../../bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
-<script src="../../../bower_components/lodash/dist/lodash.js"></script>
+<script src='assets/angular-google-maps/dist/angular-google-maps.js'></script>
+<script src="assets/lodash/dist/lodash.js"></script>
 </body>
 
 </html>
