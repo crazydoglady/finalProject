@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('farmApp')
-    .controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
+    farmApp.controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
@@ -95,9 +95,64 @@
 
   })
 
-    .controller('GoogleMapsController', function($scope){
+    .controller('GoogleMapsController', function(GoogleMapsService, $scope, $location, $routeParams, $timeout, $log){
       var mapCtrl = this;
-      $scope.map = {center: {latitude: 32.8, longitude: -79.8}, zoom: 12};
+      // $scope.map = {
+      //   center: {latitude: 32.8, longitude: -79.8}, 
+      //   zoom: 4
+      // };
+
+      // $scope.markers=[];
+      $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
+    $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
+    $scope.options = {scrollwheel: false};
+    $scope.coordsUpdates = 0;
+    $scope.dynamicMoveCtr = 0;
+    $scope.marker = {
+      id: 0,
+      coords: {
+        latitude: $scope.map.center.latitude,
+        longitude: $scope.map.center.longitude,
+      },
+      options: { draggable: true },
+      events: {
+        dragend: function (marker, eventName, args) {
+          $log.log('marker dragend');
+          var lat = marker.getPosition().lat();
+          var lon = marker.getPosition().lng();
+          $log.log(lat);
+          $log.log(lon);
+
+          $scope.marker.options = {
+            draggable: false,
+            labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+            labelAnchor: "100 0",
+            labelClass: "marker-labels"
+          };
+        }
+      }
+    };
+    // $scope.$watchCollection("marker.coords", function (newVal, oldVal) {
+    //   if (_.isEqual(newVal, oldVal))
+    //     return;
+    //   $scope.coordsUpdates++;
+    // });
+    // $timeout(function () {
+    //   $scope.marker.coords = {
+    //     latitude: 42.1451,
+    //     longitude: -100.6680
+    //   };
+    //   $scope.dynamicMoveCtr++;
+    //   $timeout(function () {
+    //     $scope.marker.coords = {
+    //       latitude: 43.1451,
+    //       longitude: -102.6680
+    //     };
+    //     $scope.dynamicMoveCtr++;
+    //   }, 2000);
+    // }, 1000);
+
+
     })
 
 })();
