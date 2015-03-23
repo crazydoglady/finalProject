@@ -22,7 +22,7 @@ farmApp.factory('userData', ['$http','routeParams', function($http, $routeParams
       console.log('hello world');
     })
   }
-  return 
+  return
   {
     //public : private
     submitSignUpAct: addUser
