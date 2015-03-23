@@ -31,13 +31,18 @@ var farmApp = angular
       })
       .when('users/sign_up',{
         templateUrl: 'assets/templates/auth.html',
-        controller: 'indexCtrl'
+        controller: 'indexCtrl' 
       })
-      .when('/login',{
+      .when('users/sign_in',{
         templateUrl: 'assets/templates/login.html',
         controller: 'indexCtrl'
       })
-      .when ('/not_found',{
+      .when('users/sign_out', {
+        templateUrl: 'assets/templates/index.html',
+        controller: 'indexCtrl',
+        method: 'DELETE'
+      })
+      .when('/not_found',{
         templateUrl: 'assets/templates/not_found.html',
         controller: 'indexCtrl'
       })

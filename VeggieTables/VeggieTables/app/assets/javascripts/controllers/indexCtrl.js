@@ -54,5 +54,21 @@ function($scope, $location, $routeParams, Auth){
     userData.submitLoginAct(addUser);
   };
 
+  $scope.submitLogoutAct = function(){
+    Auth.logout().then(function(){
+      console.log("goodbye world")
+      $scope.setUser();
+    });
+  };
+
+  // $scope.confirm = function(){
+  //   $scope.submit({
+  //     method: 'POST',
+  //     url: '../users/confirmation.json',
+  //     data: {user: {email: $scope.login_user.email}},
+  //     success_message: "A new confirmation link has been sent",
+  //     error_entity: $scope.login_error
+  //   });
+  // };
 
 }]);
