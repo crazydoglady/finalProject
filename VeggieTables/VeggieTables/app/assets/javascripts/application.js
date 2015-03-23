@@ -18,4 +18,4 @@
 //= require bootstrap
 //= require devise
 //= require welcome
-//= require controllers/indexCtrl.js
+//= require controllers/indexCtrl
