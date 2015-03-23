@@ -19,7 +19,4 @@
 //= require devise
 //= require welcome
 //= require controllers/indexCtrl
-<<<<<<< HEAD
-=======
 //= require controllers/mainCtrl
->>>>>>> cba83efe0e7c2013b611eeb61751346a6dbf6dd6
