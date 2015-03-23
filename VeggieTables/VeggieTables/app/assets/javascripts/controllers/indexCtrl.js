@@ -1,8 +1,10 @@
-farmApp.controller('indexCtrl', ['$location', '$scope', '$routeParams', 'Auth',
+farmApp.controller('indexCtrl', ['$location', '$scope', '$routeParams', 'Auth', 
 function($scope, $location, $routeParams, Auth){
   console.log("in controller");
   $scope.some_text ={name:"Farmer Ted", city: "Charleston"};
 
+  $scope.pageClass = 'page-main';
+  
   $scope.signUp = function() {
     $location.url('/users/sign_up')
   };

@@ -10,5 +10,31 @@
   <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Register</a></p>
 </div>
 </div>
-
+  <div class="googleMaps" ng-controller="GoogleMapsController as mapCtrl">
+    <h3>Network Members near you:</h3>
+    <ui-gmap-google-map class="col-lg 5 col-md-5 col-sm-5" center='map.center' zoom='map.zoom'>
+        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+        </ui-gmap-marker>
+    </ui-gmap-google-map>
+  </div>
 </div>
+<!-- <div class="resources">
+  <h2>Interested in growing your own food?</h2>
+  <ul>
+    <li>
+      <h3>Step 1:
+        <a href="http://planthardiness.ars.usda.gov/PHZMWeb/" target="_blank">Find your Hardiness Zone!</a></h3>
+      <p><h6>(opens in new tab)</h6></p>
+    </li>
+    <li>
+      <h3>Step 2:
+      <a href="">Find plants that will grow where you live.</a>
+      <p><h6></h6></p>
+    </li>
+    <li>
+      <h3>Step 3:
+      <a href="">Find a local garden center or seed provider!</a></h3>
+      <p><h6></h6></p>
+    </li>
+  </ul>
+</div> -->

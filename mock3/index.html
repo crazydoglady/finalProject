@@ -7,7 +7,6 @@
 <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body ng-app="farmApp">
@@ -20,12 +19,12 @@
 			<li class="col-lg-2 col-md-2 col-sm-2 restaurant"><a href="#/restaurant"><h5>Restaurants</h5></a></li>
 			<li class="col-lg-2 col-md-2 col-sm-2 consumer"><a href="#/consumer"><h5>Consumers</h5></a></li>
 			<li class="col-lg-1 col-md-1 col-sm-1 contact"><a href="#/contact"><h5> Contact</h5></a></li>
-			<li class="col-md-1">
+			<!-- <li class="col-md-1">
 				<form class="col-md-3 newReg" ng-submit="indexCtrl.submitSignUpAct">
     				 <input type="text" ng-model="signUpEmail" class="col-lg-12" placeholder="Enter Email">
      				<input type="text" ng-model="signUpPassword" class="col-lg-12" placeholder="Enter Password">
      				<input type="text" ng-model="signUpPasswordConfirmation" class="col-lg-12" placeholder="Confirm Password">
-     				<button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
+     				<button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button> -->
      			</form>
      		</li>
 		</ul>
@@ -65,7 +64,11 @@
 <script src="app.js"></script>
 <script src="mainCtrl.js"></script>
 <script src="mainService.js"></script>
-<!-- <script src='bower_components/angular-google-maps/dist/lodash[.min].js'></script> -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+<script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
 <!-- <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script> -->
 <!-- <script src="../farmerFeature/farm.js"></script>
 <script src="../farmerFeature/farmerCtrl.js"></script>

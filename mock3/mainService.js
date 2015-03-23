@@ -105,9 +105,9 @@ angular.module('farmApp')
 		$http.post(server, newProducer);
 	};
 
-	// var deleteFarm = function (id) {
-	// 	$http.delete(server + '/' + id);
-	// };
+	var deleteFarm = function (id) {
+		$http.delete(server + '/' + id);
+	};
 
 	var editFarm = function (producer, id) {
 		console.log(producer);
@@ -119,7 +119,7 @@ angular.module('farmApp')
 		getProducers: getFarms,
 		getSingleProducer: getOneFarm,
 		addProducer: addFarm,
-		// deleteProducer: deleteFarm,
+		deleteProducer: deleteFarm,
 		editProducer: editFarm
 	}
 });

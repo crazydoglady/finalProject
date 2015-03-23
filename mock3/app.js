@@ -4,7 +4,8 @@
   angular.module('farmApp', [
     'ngRoute',
     'ngAnimate',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'uiGmapgoogle-maps'
     // 'farm',
     // 'consumer',    
     // 'admin'
@@ -38,9 +39,13 @@
       templateUrl:'views/admin.html',
       controller: 'MainController as mainCtrl'
     })
-    .when('/admin/:memberId', {
-      templateUrl:'views/adminprofile.html',
+    .when('/admin/:restaurantId', {
+      templateUrl:'views/adminRestaurant.html',
       controller: 'MainController as mainCtrl'
+    })
+    .when('/admin/:farmerId', {
+      templateUrl:'views/adminFarm.html',
+      controller: 'RestaurantController as restCtrl'
     })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
