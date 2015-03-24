@@ -1,35 +1,52 @@
 (function () {
   "use strict";
   angular.module('farmApp')
-    .controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
+    .controller('MainController', function(MainService, FarmService, RestaurantService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
-      MainService.getProfiles().success(function(data){
+      MainService.getConsumer().success(function(data){
        mainCtrl.members = data;
        });
       
-      MainService.getSingleProfile($routeParams.memberId).success(function(data){
+      MainService.getSingleConsumer($routeParams.memberId).success(function(data){
       	mainCtrl.SingleMember = data;
       });
 
-      // mainCtrl.addProfile = function (newMember){      
-      // 	//console.log(newMember);
-      // 	MainService.addProfile(newMember);
-      // 	// console.log(newMember);
-      // 	//$location.path('/auth');
-      // }
+      mainCtrl.createProfile = function(newMember){
+        if (newMember.type === producer) {
+          FarmService.addProducer(newMember);
+        }else if(newMember.type === restaurant) {
+          RestaurantService.addRestaurant(newMember);
+        }else if(newMember.type === consumer){
+          MainService.addConsumer(newMember);
+        }else {
+          alert("Please select a membership category.");
+        }
+      };
 
-      // mainCtrl.deleteProfile = function (member) {
-      // 	MainService.deleteProfile(member);
+      mainCtrl.addComment = function(newComment) {
+        MainService.addComment(newComment);
+        $location.path('/contact');
+      }
 
-      // }
+      mainCtrl.addConsumer = function (newMember){      
+      	//console.log(newMember);
+      	MainService.addConsumer(newMember);
+      	// console.log(newMember);
+      	//$location.path('/auth');
+      }
 
-      // mainCtrl.editProfile = function (member){
-      //   console.log(member , "edit Profile started");
-      //   console.log($routeParams.memberId);
-      // 	MainService.editProfile(member, $routeParams.memberId);
-      // }
+      mainCtrl.deleteConsumer = function (member) {
+      	MainService.deleteConsumer(member);
+
+      }
+
+      mainCtrl.editConsumer = function (member){
+        //console.log(member , "edit Profile started");
+        //console.log($routeParams.memberId);
+      	MainService.editConsumer(member, $routeParams.memberId);
+      }
 
 	})
     .controller('RestaurantController', function (RestaurantService, $location, $routeParams, $scope) {
@@ -82,7 +99,7 @@
           console.log(i , "element");
           console.log(idx , "index");
           console.log(arr , "array");
-          FarmService.getCoords(i);
+          FarmService.getFarmCoords(i);
 
         });
         //original code, refactored into forEach loop ^^
@@ -116,14 +133,17 @@
 
   })
 
-    .controller('GoogleMapsController', function(MainService, FarmService, RestaurantService, $scope, $location, $routeParams, $timeout, $log){
+    .controller('GoogleMapsController', function(MainService, FarmService, RestaurantService, uiGmapGoogleMapApi, $scope, $location, $routeParams, $timeout, $log){
       var mapCtrl = this;
       // $scope.map = {
       //   center: {latitude: 32.8, longitude: -79.8}, 
       //   zoom: 4
       // };
-      
+
     $scope.markers=[];
+    uiGmapGoogleMapApi.then(function(maps){
+
+    });
     $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;

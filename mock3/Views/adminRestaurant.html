@@ -50,18 +50,20 @@
     </label>
   </div>
     <label for="">Name</label>
-    <input type="text" ng-model="mainCtrl.SingleMember.name">
-    <label for="">Location</label>
-    <input type="text" ng-model="mainCtrl.SingleMember.location">
-    <label for="">Email</label>
-    <input type="text" ng-model="mainCtrl.SingleMember.email">
-    <label for="">Photo</label>
-    <input type="url" ng-model="mainCtrl.SingleMember.photo">
+  <input type="text" ng-model="restCtrl.SingleRestaurant.name" class="col-lg-12">
+  <label for="">Street Address</label>
+    <input type="text" ng-model="restCtrl.SingleRestaurant.address" class=" col-lg-12" >
+    <label for="">City</label>
+    <input type="text" ng-model="restCtrl.SingleRestaurant.city" class=" col-lg-12" placeholder="City">
+    <label for="">State</label>
+    <input type="text" ng-model="restCtrl.SingleRestaurant.state" class=" col-lg-12" placeholder="State">
+    <label for="">Zip code</label>
+    <input type="text" ng-model="restCtrl.SingleRestaurant.zipcode" class=" col-lg-12" placeholder="Zip Code">
     <label for="">Website</label>
-    <input type="url" ng-model="mainCtrl.SingleMember.website">
-    <label for="">Description</label>
-    <textarea name="description" id="" cols="30" rows="10" ng-model="mainCtrl.SingleMember.description"></textarea>
-    <button action="submit">Save Changes</button>
+    <input type="url" ng-model="restCtrl.SingleRestaurant.website" class=" col-lg-12" placeholder="Website">
+    <label for="">e-mail</label>
+    <input type="text" ng-model="restCtrl.SingleRestaurant.email" class="col-lg-12" placeholder="e-mail">
+  <button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Save changes</button>
 	</form>
     </div>
 </div>

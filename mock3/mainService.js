@@ -4,7 +4,7 @@ angular.module('farmApp')
 .factory('MainService', function($http, $rootScope, $location, $routeParams){
 	
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
-	
+	var comServe = 'http://tiy-fee-rest.herokuapp.com/collections/vtcomments';
 
 	var getMembers = function () {
 		return $http.get(server);
@@ -17,21 +17,17 @@ angular.module('farmApp')
 	var addMember = function (newMember) {
 		console.log(newMember.name , "member name");
 		$http.post(server, newMember);
-		if (newMember.category === 'producer') {
-			$location.path('/farmers');
-		} else if (newMember.category === 'consumer') {
-			$location.path('/consumer');
-		} else if (newMember.category === 'restaurant') {
-			$location.path('/restaurant');
-		}
-		$rootScope.$broadcast("member added");
+		  $location.path('/consumer');
+	};
+	var addComment = function (newComment){
+		console.log(newComment);
+		$http.post(comServe, newComment);
 	};
 
 	var deleteMember = function (id) {
 		console.log(id);
 		$http.delete(server + '/' + id);
 		//$location.path('#/admin');
-
 	};
 
 	var editMember = function (member, id) {
@@ -42,11 +38,12 @@ angular.module('farmApp')
 	};
 	return	{
 		//public : private
-		getProfiles: getMembers,
-		getSingleProfile: getOneMember,
-		addProfile: addMember,
-		deleteProfile: deleteMember,
-		editProfile: editMember
+		getConsumers: getMembers,
+		getSingleConsumer: getOneMember,
+		addConsumer: addMember,
+		deleteConsumer: deleteMember,
+		editConsumer: editMember,
+		addComment: addComment
 	}
 })
 //==============end MainService
@@ -97,7 +94,7 @@ angular.module('farmApp')
 		addRestaurant: addRest,
 		deleteRestaurant: deleteRest,
 		editRestaurant: editRest,
-		getCoords: getCoords
+		//getCoords: getCoords
 	}
 })
 
@@ -143,16 +140,18 @@ angular.module('farmApp')
         var replacedCity = producer.city.split(' ').join('+');
         var replacedState = producer.state.split(' ').join('+');
         var address = replacedStreet + ',+' + replacedCity + ',+' + replacedState;
-        var apiKey = '&key=AIzaSyAMmjqHUi8UlrbCFrrwBsaMrhtgLAhW0n4';
+        var apiKey = 'AIzaSyD868dkR8g-WKXQy6fttPTlkExp4PvYPxM';
         var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
+        console.log(address, "address");
         console.log(url);
         $http.get(url).success(function(dataset){
           console.log(dataset);
-          var compGeo = dataset.results[0].geometry.location;
-          producer.coords = {};
-          producer.coords.longitude = compGeo.lng;
 
-          producer.coords.latitude = compGeo.lat;
+          var farmGeo = dataset.results[0].geometry.location;
+          producer.coords = {};
+          producer.coords.longitude = farmGeo.lng;
+
+          producer.coords.latitude = farmGeo.lat;
           editFarm(producer, producer._id);
         });
       };

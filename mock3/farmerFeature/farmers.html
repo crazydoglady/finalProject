@@ -21,11 +21,13 @@
 </div>
 </div>
 <div class="googleMaps" ng-controller="GoogleMapsController as mapCtrl">
-<input ng-model="query" type="text" Placeholder="Search">
+<!-- <input ng-model="query" type="text" Placeholder="Search"> -->
     <h3>Network Members near you:</h3>
 <ui-gmap-google-map class="col-lg 5 col-md-5 col-sm-5" center='map.center' zoom='map.zoom'>
-        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+	<div ng-repeat="producer in farmCtrl.producers | filter: query">
+        <ui-gmap-marker coords="producer.coords"  idkey="producer._id">
         </ui-gmap-marker>
+        </div>
     </ui-gmap-google-map>
 
 </div>

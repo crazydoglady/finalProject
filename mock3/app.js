@@ -31,6 +31,10 @@
       templateUrl: 'views/register.html',
       controller: 'MainController as mainCtrl'
     })
+    .when('/createProfile', {
+      templateUrl: 'views/createProfile.html',
+      controller: 'MainController as mainCtrl'
+    })
     .when('/contact', {
       templateUrl: 'views/contact.html',
       controller: 'MainController as mainCtrl'
