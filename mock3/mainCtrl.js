@@ -5,13 +5,13 @@
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
-      MainService.getProfiles().success(function(data){
-       mainCtrl.members = data;
-       });
+      // MainService.getProfiles().success(function(data){
+      //  mainCtrl.members = data;
+      //  });
       
-      MainService.getSingleProfile($routeParams.memberId).success(function(data){
-      	mainCtrl.SingleMember = data;
-      });
+      // MainService.getSingleProfile($routeParams.memberId).success(function(data){
+      // 	mainCtrl.SingleMember = data;
+      // });
 
       // mainCtrl.addProfile = function (newMember){      
       // 	//console.log(newMember);

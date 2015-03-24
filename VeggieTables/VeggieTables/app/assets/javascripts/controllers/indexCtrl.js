@@ -43,6 +43,7 @@ function($scope, $location, $routeParams, Auth){
       email: $scope.signUpEmail,
       password: $scope.signUpPassword,
       password_confirmation: $scope.signUpPasswordConfirmation
+      admin: $scope.signUpAdmin,
     };
     Auth.register(sign_up_credentials).then(function(registeredUser){
      $location.url('/');
@@ -62,6 +63,13 @@ function($scope, $location, $routeParams, Auth){
     });
   };
 
+  $scope.$on('devise:login', function(event, currentUser){
+
+  });
+
+  $scope.$on('devise:new-session', function(event, currentUser){
+
+  });
   // $scope.confirm = function(){
   //   $scope.submit({
   //     method: 'POST',
