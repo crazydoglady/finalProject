@@ -20,3 +20,5 @@
 //= require welcome
 //= require controllers/indexCtrl
 //= require controllers/mainCtrl
+//= require factories/userFactory
+//= require factories/mainService
