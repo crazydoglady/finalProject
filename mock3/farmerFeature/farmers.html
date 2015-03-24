@@ -20,5 +20,15 @@
   <p><a class="btn btn-primary btn-lg" href="#/register" role="button">Join our Network!</a></p>
 </div>
 </div>
+<div class="googleMaps" ng-controller="GoogleMapsController as mapCtrl">
+<!-- <input ng-model="query" type="text" Placeholder="Search"> -->
+    <h3>Network Members near you:</h3>
+<ui-gmap-google-map class="col-lg 5 col-md-5 col-sm-5" center='map.center' zoom='map.zoom'>
+	<div ng-repeat="producer in farmCtrl.producers | filter: query">
+        <ui-gmap-marker coords="producer.coords"  idkey="producer._id">
+        </ui-gmap-marker>
+        </div>
+    </ui-gmap-google-map>
 
+</div>
 </div>

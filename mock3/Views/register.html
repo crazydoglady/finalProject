@@ -15,8 +15,17 @@
 <form ng-show="new" class="col-md-5 newReg" ng-submit="farmCtrl.addProducer(newFarmer)">
   <h4>Register as a local grower:</h4>
     <input type="text" ng-model="newFarmer.name" class="col-lg-12" placeholder="Name">
-    <input type="text" ng-model="newFarmer.location" class=" col-lg-12" placeholder="Location">
-    <input type="text" ng-model="newFarmer.email" class="col-lg-12" placeholder="email">
+    <select name="type" id="">
+      <option value="farm">Farm</option>
+      <option value="market">Market</option>
+      <option value="CSA">CSA</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="text" ng-model="newFarmer.address" class=" col-lg-12" placeholder="Street Address">
+    <input type="text" ng-model="newFarmer.city" class=" col-lg-12" placeholder="City">
+    <input type="text" ng-model="newFarmer. state" class=" col-lg-12" placeholder="State">
+    <input type="text" ng-model="newFarmer. zipcode" class=" col-lg-12" placeholder="Zip Code">
+    <input type="text" ng-model="newFarmer.email" class="col-lg-12" placeholder="e-mail">
   <button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
 </form>
 </article>
@@ -31,10 +40,14 @@
   <p>Eating local has never been as popular as it is now. Our consumer network are almost as passionate about local food as you are! Registering with our application will allow consumers to see what you're cooking while continuing to support the local economy and environment by eating locally!</h4></p>
    <article class="registerRestaurant col-lg-12 col-md-12 col-sm-12">
   <button type="" ng-show="!new" ng-click="new =!new" class="newReg" class="btn btn-default">Join Now! </button>
-<form ng-show="new" class="col-md-5 newReg" ng-submit="restCtrl.addEatery(newEatery)">
-    <input type="text" ng-model="newEatery.name" class="col-lg-12" placeholder="Name">
-    <input type="text" ng-model="newEatery.location" class=" col-lg-12" placeholder="Location">
-    <input type="text" ng-model="newEatery.email" class="col-lg-12" placeholder="email">
+<form ng-show="new" class="col-md-5 newReg" ng-submit="restCtrl.addRestaurant(newRestaurant)">
+    <input type="text" ng-model="newRestaurant.name" class="col-lg-12" placeholder="Name">
+    <input type="text" ng-model="newRestaurant.address" class=" col-lg-12" placeholder="Street Address">
+    <input type="text" ng-model="newRestaurant.city" class=" col-lg-12" placeholder="City">
+    <input type="text" ng-model="newRestaurant.state" class=" col-lg-12" placeholder="State">
+    <input type="text" ng-model="newRestaurant.zipcode" class=" col-lg-12" placeholder="Zip Code">
+    <input type="url" ng-model="newRestaurant.website" class=" col-lg-12" placeholder="Website">
+    <input type="text" ng-model="newRestaurant.email" class="col-lg-12" placeholder="e-mail">
   <button type="submit" class="col-lg-md-5 col-md-5 col-sm-5">Register</button>
 </form>
 </article>

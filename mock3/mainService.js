@@ -4,7 +4,7 @@ angular.module('farmApp')
 .factory('MainService', function($http, $rootScope, $location, $routeParams){
 	
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
-	
+	var comServe = 'http://tiy-fee-rest.herokuapp.com/collections/vtcomments';
 
 	var getMembers = function () {
 		return $http.get(server);
@@ -17,20 +17,17 @@ angular.module('farmApp')
 	var addMember = function (newMember) {
 		console.log(newMember.name , "member name");
 		$http.post(server, newMember);
-		if (newMember.category === 'producer') {
-			$location.path('/farmers');
-		} else if (newMember.category === 'consumer') {
-			$location.path('/consumer');
-		} else if (newMember.category === 'restaurant') {
-			$location.path('/restaurant');
-		}
+		  $location.path('/consumer');
+	};
+	var addComment = function (newComment){
+		console.log(newComment);
+		$http.post(comServe, newComment);
 	};
 
 	var deleteMember = function (id) {
 		console.log(id);
 		$http.delete(server + '/' + id);
 		//$location.path('#/admin');
-
 	};
 
 	var editMember = function (member, id) {
@@ -41,11 +38,12 @@ angular.module('farmApp')
 	};
 	return	{
 		//public : private
-		getProfiles: getMembers,
-		getSingleProfile: getOneMember,
-		addProfile: addMember,
-		deleteProfile: deleteMember,
-		editProfile: editMember
+		getConsumers: getMembers,
+		getSingleConsumer: getOneMember,
+		addConsumer: addMember,
+		deleteConsumer: deleteMember,
+		editConsumer: editMember,
+		addComment: addComment
 	}
 })
 //==============end MainService
@@ -67,22 +65,36 @@ angular.module('farmApp')
 	var addRest = function (newEats) {
 		console.log(newEats.name);
 		$http.post(server, newEats);
+		$rootScope.$apply();
 	};
 
 	var deleteRest = function (id) {
 		$http.delete(server + '/' + id);
+		$rootScope.$broadcast("Restaurant: deleted");
 	};
 
 	var editRest = function (producer, id) {
 		$http.put(server + '/' + id, producer)
+		$rootScope.$broadcast("Restaurant: edited");
+		$location.path('/restaurants');
 	};
+	var getCoords = function (restaurant) {
+  	  $http.get(server + restaurant._id).success(function(){
+    	restaurant.coords = {};
+    	console.log(restaurant.coords, "coords");
+    	restaurant.coords.longitude = restaurant.longitude;
+    	restaurant.coords.latitude = restaurant.latitude;
+  	  });
+  	}; 
+
 	return	{
 		//public : private
 		getRestaurants: getRests,
 		getSingleRestaurant: getOneRest,
 		addRestaurant: addRest,
 		deleteRestaurant: deleteRest,
-		editRestaurant: editRest
+		editRestaurant: editRest,
+		//getCoords: getCoords
 	}
 })
 
@@ -114,13 +126,45 @@ angular.module('farmApp')
 		console.log(id, "editFarmSVC")
 		$http.put(server + '/' + id, producer)
 	};
+	var getCoords = function (producer) {
+  	  $http.get(server + producer._id).success(function(){
+    	producer.coords = {};
+    	console.log(producer.coords, "coords");
+    	producer.coords.longitude = producer.longitude;
+    	producer.coords.latitude = producer.latitude;
+  	  });
+
+	};
+	var getFarmCoords = function (producer) {
+        var replacedStreet = producer.address.split(' ').join('+');
+        var replacedCity = producer.city.split(' ').join('+');
+        var replacedState = producer.state.split(' ').join('+');
+        var address = replacedStreet + ',+' + replacedCity + ',+' + replacedState;
+        var apiKey = 'AIzaSyD868dkR8g-WKXQy6fttPTlkExp4PvYPxM';
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
+        console.log(address, "address");
+        console.log(url);
+        $http.get(url).success(function(dataset){
+          console.log(dataset);
+
+          var farmGeo = dataset.results[0].geometry.location;
+          producer.coords = {};
+          producer.coords.longitude = farmGeo.lng;
+
+          producer.coords.latitude = farmGeo.lat;
+          editFarm(producer, producer._id);
+        });
+      };
+
 	return	{
 		//public : private
 		getProducers: getFarms,
 		getSingleProducer: getOneFarm,
 		addProducer: addFarm,
 		deleteProducer: deleteFarm,
-		editProducer: editFarm
+		editProducer: editFarm,
+		getCoords : getCoords,
+		getFarmCoords: getFarmCoords
 	}
 });
 })();//end big function
