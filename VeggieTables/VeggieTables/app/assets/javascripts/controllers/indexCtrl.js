@@ -1,7 +1,7 @@
 farmApp.controller('indexCtrl', ['$location', '$scope', '$routeParams', 'Auth',
 function($scope, $location, $routeParams, Auth){
-  console.log("in controller");
-  $scope.some_text ={name:"Farmer Ted", city: "Charleston"};
+  console.log("in controller sasdf");
+  $scope.some_text = {name:"Farmer Ted", city: "Charleston"};
 
   $scope.pageClass = 'page-main';
 
@@ -55,6 +55,7 @@ function($scope, $location, $routeParams, Auth){
   };
 
   $scope.submitLogoutAct = function(){
+    console.log("Inside function");
     Auth.logout().then(function(){
       console.log("goodbye world")
       $scope.setUser();

@@ -14,6 +14,7 @@
 <header>
   <span><h1>VeggieTables</h1></span>
   <nav>
+
 <ul>
     <li class="col-md-1 home"><a href="#/"><h5><i class="fa fa-home"></i>  Home</h5></a></li>
     <li class="col-md-1 producer"><a href="#/farmers"><h5><i class="fa fa-truck"></i> Producers</h5></a></li>
@@ -22,8 +23,12 @@
     <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>
     <li class="col-md-1 signup"><a href="/users/sign_up"><h5><i class="fa fa-lightbulb-o"></i> Sign Up </h5></a></li>
     <li class="col-md-1 login"><a href="/users/sign_in"><h5><i class="fa fa-lightbulb-o"></i>Log In</h5></a></li>
-    <button ng-click="submitLogoutAct(user)">Log Out</button>
+
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
+    
   </ul>
+
   </nav>
 
 </header>
@@ -35,24 +40,8 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
-<!-- <footer class="col-md-12">
-  <nav>
-    <ul>
-      <li class="col-md-3">
-        <a href="#/producer"><h3>Producers</h3></a>
-      </li>
-      <li class="col-md-3">
-        <a href="#/restaurant"><h3>  Restaurants</h3></a>
-      </li>
-      <li class="col-md-3">
-        <a href="#/not-found"><h3> Eat. Learn. Grow.</h3></a>
-      </li>
-      <li class="col-md-3">
-        <a href="#/consumer"><h3>Consumers</h3></a>
-      </li>
-    </ul>
-  </nav>
-</footer> -->
+
+      
 <script src="assets/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="assets/angular-animate/angular-animate.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
