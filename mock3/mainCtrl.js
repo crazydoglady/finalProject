@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('farmApp')
-    farmApp.controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
+    .controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
@@ -38,6 +38,14 @@
        
        RestaurantService.getRestaurants().success(function(data){
         restCtrl.restaurants = data;
+        restCtrl.restaurants.forEach(function(i, idx, arr){
+          console.log(i , "element");
+          console.log(idx , "index");
+          console.log(arr , "array");
+          RestaurantService.getCoords(i);
+
+        });
+      
        });
       
       RestaurantService.getSingleRestaurant($routeParams.restaurantId).success(function(data){
@@ -69,6 +77,19 @@
        
       FarmService.getProducers().success(function(data){
         farmCtrl.producers = data;
+        console.log(data);
+        farmCtrl.producers.forEach(function(i, idx, arr){
+          console.log(i , "element");
+          console.log(idx , "index");
+          console.log(arr , "array");
+          FarmService.getCoords(i);
+
+        });
+        //original code, refactored into forEach loop ^^
+        // for( var i = 0; i < farmCtrl.producers.length ; i++) {
+        // FarmService.getCoords(farmCtrl.producers[i]);
+        // console.log(farmCtrl.producers[i]);
+        // };
        });
       
       FarmService.getSingleProducer($routeParams.farmerId).success(function(data){
@@ -95,15 +116,14 @@
 
   })
 
-    .controller('GoogleMapsController', function(GoogleMapsService, $scope, $location, $routeParams, $timeout, $log){
+    .controller('GoogleMapsController', function(MainService, FarmService, RestaurantService, $scope, $location, $routeParams, $timeout, $log){
       var mapCtrl = this;
       // $scope.map = {
       //   center: {latitude: 32.8, longitude: -79.8}, 
       //   zoom: 4
       // };
-
-      // $scope.markers=[];
-      $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
+      
+    $scope.markers=[];
     $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;
