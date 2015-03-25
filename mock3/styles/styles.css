@@ -1,4 +1,4 @@
-/*index page &global stylings*/
+/*index page & global styling elements*/
 .ng-enter {
   animation: scaleUp 2s both ease-in;
   z-index: 8888; }
@@ -46,6 +46,9 @@ label {
 
 .wrapper {
   margin: 1% 0 0 6%; }
+
+.joinUs {
+  margin: 1%; }
 
 /*main view*/
 .splash {
