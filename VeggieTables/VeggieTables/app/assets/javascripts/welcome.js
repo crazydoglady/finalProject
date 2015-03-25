@@ -61,15 +61,18 @@ var farmApp = angular
       templateUrl:'assets/templates/farmProfile.html',
       controller:'FarmController as farmCtrl'
     })
-      
-    .when('users/sign_up',{
-      templateUrl: 'assets/templates/auth.html',
-      controller: 'indexCtrl'
-    })
-    .when('users/sign_in',{
-      templateUrl: 'assets/templates/login.html',
-      controller: 'indexCtrl'
-    })
+    .when('/createProfile', {
+      templateUrl: 'assets/templates/createProfile.html',
+      controller: 'MainController as mainCtrl'
+    })  
+    // .when('users/sign_up',{
+    //   templateUrl: 'assets/templates/auth.html',
+    //   controller: 'indexCtrl'
+    // })
+    // .when('users/sign_in',{
+    //   templateUrl: 'assets/templates/login.html',
+    //   controller: 'indexCtrl'
+    // })
     .when('/not_found',{
       templateUrl: 'assets/templates/not_found.html',
       controller: 'indexCtrl'

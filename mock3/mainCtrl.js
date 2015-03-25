@@ -5,6 +5,14 @@
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
+
+      // MainService.getProfiles().success(function(data){
+      //  mainCtrl.members = data;
+      //  });
+      
+      // MainService.getSingleProfile($routeParams.memberId).success(function(data){
+      // 	mainCtrl.SingleMember = data;
+      // });
       MainService.getConsumer().success(function(data){
        mainCtrl.members = data;
        });
