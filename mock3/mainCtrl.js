@@ -144,7 +144,7 @@
     uiGmapGoogleMapApi.then(function(maps){
 
     });
-    $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
+    $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 5 };
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;
     $scope.dynamicMoveCtr = 0;
