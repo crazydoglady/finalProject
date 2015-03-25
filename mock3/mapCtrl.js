@@ -17,12 +17,12 @@
       //       MainService.getPlaceCoords(mapCtrl.places[i]);
       //     }
       // }
-      
+
       // $scope.map = {
-      //   center: {latitude: 32.8, longitude: -79.8}, 
+      //   center: {latitude: 32.8, longitude: -79.8},
       //   zoom: 4
       // };
-    
+
     $scope.markers=[];
     $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
     $scope.options = {scrollwheel: false};

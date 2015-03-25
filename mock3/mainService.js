@@ -2,7 +2,7 @@
 "use Strict";
 angular.module('farmApp')
 .factory('MainService', function($http, $rootScope, $location, $routeParams){
-	
+
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
 	var comServe = 'http://tiy-fee-rest.herokuapp.com/collections/vtcomments';
 
@@ -50,9 +50,9 @@ angular.module('farmApp')
 
 
 .factory('RestaurantService', function( $http, $rootScope, $routeParams){
-	
+
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtrestaurants';
-	
+
 	var getRests = function () {
 		return $http.get(server);
 	};
@@ -85,7 +85,7 @@ angular.module('farmApp')
     	restaurant.coords.longitude = restaurant.longitude;
     	restaurant.coords.latitude = restaurant.latitude;
   	  });
-  	}; 
+  	};
 
 	return	{
 		//public : private
@@ -102,7 +102,7 @@ angular.module('farmApp')
 
 
 .factory('FarmService', function($http, $rootScope, $routeParams){
-	
+
 	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtfarmers';
 
 	var getFarms = function () {
@@ -171,9 +171,3 @@ angular.module('farmApp')
 
 
 //==================end FarmService
-
-
-
-
-
-

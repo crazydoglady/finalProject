@@ -3,13 +3,17 @@ function($scope, $location, $routeParams, Auth){
   console.log("in controller sasdf");
   $scope.some_text = {name:"Farmer Ted", city: "Charleston"};
 
-  $scope.pageClass = 'page-main';
+
 
   $scope.signUp = function() {
     $location.url('/users/sign_up')
   };
 
- $scope.submitLoginAct = function(){
+  $scope.registerUser = function() {
+    console.log("in register function")
+  }
+
+  $scope.submitLoginAct = function(){
     var credentials = {
       email: $scope.loginEmail,
       password: $scope.loginPassword
@@ -38,14 +42,14 @@ function($scope, $location, $routeParams, Auth){
     });
   };
   $scope.submitSignUpAct = function(){
-    console.log('in submit function');
-    var sign_up_credentials = {
+    console.log("in submit function");
+    var credentials = {
       email: $scope.signUpEmail,
       password: $scope.signUpPassword,
       password_confirmation: $scope.signUpPasswordConfirmation
     };
-    Auth.register(sign_up_credentials).then(function(registeredUser){
-     $location.url('/');
+    Auth.register(credentials).then(function(user){
+     $url.location('/createProfile');
       console.log('done did it');
     }, function(error){
       $scope.error_message = error;
@@ -62,6 +66,13 @@ function($scope, $location, $routeParams, Auth){
     });
   };
 
+  // $scope.$on('devise:login', function(event, currentUser){
+
+  // });
+
+  // $scope.$on('devise:new-session', function(event, currentUser){
+
+  // });
   // $scope.confirm = function(){
   //   $scope.submit({
   //     method: 'POST',

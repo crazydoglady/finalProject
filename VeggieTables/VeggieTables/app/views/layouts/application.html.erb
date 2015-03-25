@@ -3,10 +3,11 @@
 <head>
     <title>VeggieTables</title>
 
-<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <%= stylesheet_link_tag "application", media: "all" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!-- Latest compiled and minified JavaScript -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
@@ -15,18 +16,18 @@
   <span><h1>VeggieTables</h1></span>
   <nav>
 
-<ul>
-    <li class="col-md-1 home"><a href="#/"><h5><i class="fa fa-home"></i>  Home</h5></a></li>
-    <li class="col-md-1 producer"><a href="#/farmers"><h5><i class="fa fa-truck"></i> Producers</h5></a></li>
-    <li class="col-md-1 restaurant"><a href="#/restaurant"><h5><i class="fa fa-cutlery"></i>Restaurants</h5></a></li>
-    <li class="col-md-1 consumer"><a href="#/consumer"><h5><i class="fa fa-users"></i>Consumers</h5></a></li>
-    <li class="col-md-1 contact"><a href="#/contact"><h5><i class="fa fa-lightbulb-o"></i> Contact</h5></a></li>
-    <li class="col-md-1 signup"><a href="/users/sign_up"><h5><i class="fa fa-lightbulb-o"></i> Sign Up </h5></a></li>
-    <li class="col-md-1 login"><a href="/users/sign_in"><h5><i class="fa fa-lightbulb-o"></i>Log In</h5></a></li>
+<ul class="col-lg-12 cl-md-12 col-sm-12">
+    <li class="col-md-1 home"><a href="#/"><h5>Home</h5></a></li>
+    <li class="col-md-1 producer"><a href="#/farmers"><h5>Producers</h5></a></li>
+    <li class="col-md-1 restaurant"><a href="#/restaurant"><h5>Restaurants</h5></a></li>
+    <li class="col-md-1 consumer"><a href="#/consumer"><h5>Consumers</h5></a></li>
+    <li class="col-md-1 contact"><a href="#/contact"><h5>Contact</h5></a></li>
+    <li class="col-md-1 signup"><a href="/users/sign_up"><h5>Sign Up </h5></a></li>
+    <li class="col-md-1 login"><a href="/users/sign_in"><h5>Log In</h5></a></li>
 
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 
-    
+
   </ul>
 
   </nav>
@@ -34,14 +35,13 @@
 </header>
 <div class="container col-sm-12 col-md-12 col-lg-12">
 <ng-view></ng-view>
-
 </div>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
 
-      
+
 <script src="assets/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="assets/angular-animate/angular-animate.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>

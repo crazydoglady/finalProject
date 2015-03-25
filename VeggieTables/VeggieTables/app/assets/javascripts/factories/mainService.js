@@ -3,7 +3,7 @@
 angular.module('farmApp')
 .factory('MainService', function($http, $rootScope, $location, $routeParams){
 
-	var server = 'http://tiy-fee-rest.herokuapp.com/collections/commonground';
+	var server = 'http://localhost:3000';
 
 
 	var getMembers = function () {
@@ -53,7 +53,7 @@ angular.module('farmApp')
 
 .factory('RestaurantService', function( $http, $rootScope, $routeParams){
 
-	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtrestaurants';
+	var server = 'http://localhost:3000/#/restaurant';
 
 	var getRests = function () {
 		return $http.get(server);
@@ -91,7 +91,7 @@ angular.module('farmApp')
 
 .factory('FarmService', function($http, $rootScope, $routeParams){
 
-	var server = 'http://tiy-fee-rest.herokuapp.com/collections/vtfarmers';
+	var server = 'http://localhost:3000/#/producer';
 
 	var getFarms = function () {
 		return $http.get(server);
