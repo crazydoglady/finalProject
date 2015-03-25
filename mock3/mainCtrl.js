@@ -5,13 +5,13 @@
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
  
-      MainService.getConsumer().success(function(data){
-       mainCtrl.members = data;
-       });
+      // MainService.getConsumer().success(function(data){
+      //  mainCtrl.members = data;
+      //  });
       
-      MainService.getSingleConsumer($routeParams.memberId).success(function(data){
-      	mainCtrl.SingleMember = data;
-      });
+      // MainService.getSingleConsumer($routeParams.memberId).success(function(data){
+      // 	mainCtrl.SingleMember = data;
+      // });
 
       mainCtrl.createProfile = function(newMember){
         if (newMember.type === producer) {
@@ -23,7 +23,7 @@
         }else {
           alert("Please select a membership category.");
         }
-      };
+      }
 
       mainCtrl.addComment = function(newComment) {
         MainService.addComment(newComment);
@@ -193,6 +193,6 @@
     // }, 1000);
 
 
-    })
+    });
 
 })();
