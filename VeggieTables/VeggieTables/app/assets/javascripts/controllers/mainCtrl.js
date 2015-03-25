@@ -68,6 +68,8 @@
       $scope.pageClass='page-farmers';
 
       FarmService.getProducers().success(function(data){
+        console.log("**********")
+        console.log(data)
         farmCtrl.producers = data;
        });
 

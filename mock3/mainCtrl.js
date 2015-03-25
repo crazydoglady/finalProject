@@ -4,22 +4,27 @@
     .controller('MainController', function(MainService, FarmService, RestaurantService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
- 
+
+      // MainService.getConsumer().success(function(data){
+      //  mainCtrl.members = data;
+      //  });
+
 
       // MainService.getProfiles().success(function(data){
       //  mainCtrl.members = data;
       //  });
-      
+
       // MainService.getSingleProfile($routeParams.memberId).success(function(data){
       // 	mainCtrl.SingleMember = data;
       // });
       MainService.getConsumer().success(function(data){
        mainCtrl.members = data;
        });
-      
-      MainService.getSingleConsumer($routeParams.memberId).success(function(data){
-      	mainCtrl.SingleMember = data;
-      });
+
+
+      // MainService.getSingleConsumer($routeParams.memberId).success(function(data){
+      // 	mainCtrl.SingleMember = data;
+      // });
 
       mainCtrl.createProfile = function(newMember){
         if (newMember.type === producer) {
@@ -31,14 +36,14 @@
         }else {
           alert("Please select a membership category.");
         }
-      };
+      }
 
       mainCtrl.addComment = function(newComment) {
         MainService.addComment(newComment);
         $location.path('/contact');
       }
 
-      mainCtrl.addConsumer = function (newMember){      
+      mainCtrl.addConsumer = function (newMember){
       	//console.log(newMember);
       	MainService.addConsumer(newMember);
       	// console.log(newMember);
@@ -60,7 +65,7 @@
     .controller('RestaurantController', function (RestaurantService, $location, $routeParams, $scope) {
       var restCtrl = this;
       $scope.pageClass= 'page-restaurants';
-       
+
        RestaurantService.getRestaurants().success(function(data){
         restCtrl.restaurants = data;
         restCtrl.restaurants.forEach(function(i, idx, arr){
@@ -70,9 +75,9 @@
           RestaurantService.getCoords(i);
 
         });
-      
+
        });
-      
+
       RestaurantService.getSingleRestaurant($routeParams.restaurantId).success(function(data){
         restCtrl.SingleRestaurant = data;
       });
@@ -99,7 +104,7 @@
     .controller('FarmController', function (FarmService, $location, $routeParams, $scope) {
       var farmCtrl = this;
       $scope.pageClass='page-farmers';
-       
+
       FarmService.getProducers().success(function(data){
         farmCtrl.producers = data;
         console.log(data);
@@ -116,7 +121,7 @@
         // console.log(farmCtrl.producers[i]);
         // };
        });
-      
+
       FarmService.getSingleProducer($routeParams.farmerId).success(function(data){
         farmCtrl.SingleProducer = data;
       });
@@ -144,7 +149,7 @@
     .controller('GoogleMapsController', function(MainService, FarmService, RestaurantService, uiGmapGoogleMapApi, $scope, $location, $routeParams, $timeout, $log){
       var mapCtrl = this;
       // $scope.map = {
-      //   center: {latitude: 32.8, longitude: -79.8}, 
+      //   center: {latitude: 32.8, longitude: -79.8},
       //   zoom: 4
       // };
 
@@ -152,7 +157,7 @@
     uiGmapGoogleMapApi.then(function(maps){
 
     });
-    $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 4 };
+    $scope.map = {center: {latitude: 32.8, longitude: -79.8 }, zoom: 5 };
     $scope.options = {scrollwheel: false};
     $scope.coordsUpdates = 0;
     $scope.dynamicMoveCtr = 0;
@@ -201,6 +206,6 @@
     // }, 1000);
 
 
-    })
+    });
 
 })();

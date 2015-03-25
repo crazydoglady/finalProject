@@ -45,11 +45,11 @@
     })
     .when('/admin/:restaurantId', {
       templateUrl:'views/adminRestaurant.html',
-      controller: 'MainController as mainCtrl'
-    })
-    .when('/admin/:farmerId', {
-      templateUrl:'views/adminFarm.html',
       controller: 'RestaurantController as restCtrl'
+    })
+    .when('/adminfarm/:farmerId', {
+      templateUrl:'views/adminFarm.html',
+      controller: 'FarmController as farmCtrl'
     })
     .when('/restaurant', {
       templateUrl: 'restaurantFeature/restaurants.html',
