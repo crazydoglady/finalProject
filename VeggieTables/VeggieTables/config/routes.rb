@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users 
 
+  resources :profiles
+  resources :farmers
+  resources :restaurants
+  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'welcome/index', :defaults => { :format => 'html'}

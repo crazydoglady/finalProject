@@ -53,14 +53,14 @@ angular.module('farmApp')
 
 .factory('RestaurantService', function( $http, $rootScope, $routeParams){
 
-	var server = 'http://localhost:3000/#/restaurant';
+	var server = 'http://localhost:3000/restaurant.json';
 
 	var getRests = function () {
 		return $http.get(server);
 	};
 
 	var getOneRest = function (id) {
-		console.log(id , 'RestServId');
+		console.log('RestServId');
 		return $http.get(server + '/' + id);
 	};
 
@@ -91,7 +91,7 @@ angular.module('farmApp')
 
 .factory('FarmService', function($http, $rootScope, $routeParams){
 
-	var server = 'http://localhost:3000/#/producer';
+	var server = 'http://localhost:3000/farmers.json';
 
 	var getFarms = function () {
 		return $http.get(server);

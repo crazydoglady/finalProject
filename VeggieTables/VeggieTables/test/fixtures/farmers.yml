@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  email: MyString
+  photo: MyString
+  description: MyText
+  fruits: false
+  vegetables: false
+  herbs: false
+  squash: false
+  taters: false
+
+two:
+  name: MyString
+  location: MyString
+  email: MyString
+  photo: MyString
+  description: MyText
+  fruits: false
+  vegetables: false
+  herbs: false
+  squash: false
+  taters: false
