@@ -38,8 +38,8 @@ angular.module('farmApp')
 	};
 	return	{
 		//public : private
-		getConsumers: getMembers,
-		getSingleConsumer: getOneMember,
+		getMembers: getMembers,
+		getSingleMember: getOneMember,
 		addConsumer: addMember,
 		deleteConsumer: deleteMember,
 		editConsumer: editMember,
@@ -69,8 +69,8 @@ angular.module('farmApp')
 	};
 
 	var deleteRest = function (id) {
+		console.log(restaurant[i]);
 		$http.delete(server + '/' + id);
-		$rootScope.$broadcast("Restaurant: deleted");
 	};
 
 	var editRest = function (producer, id) {
@@ -86,6 +86,26 @@ angular.module('farmApp')
     	restaurant.coords.latitude = restaurant.latitude;
   	  });
   	};
+  	var getRestCoords = function (restaurant) {
+        var replacedStreet = restaurant.address.split(' ').join('+');
+        var replacedCity = restaurant.city.split(' ').join('+');
+        var replacedState = restaurant.state.split(' ').join('+');
+        var address = replacedStreet + ',+' + replacedCity + ',+' + replacedState;
+        var apiKey = 'AIzaSyD868dkR8g-WKXQy6fttPTlkExp4PvYPxM';
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
+        console.log(address, "address");
+        console.log(url);
+        $http.get(url).success(function(dataset){
+          console.log(dataset);
+
+          var restGeo = dataset.results[0].geometry.location;
+          restaurant.coords = {};
+          restaurant.coords.longitude = restGeo.lng;
+
+          restaurant.coords.latitude = restGeo.lat;
+          editRest(restaurant, restaurant._id);
+        });
+      };
 
 	return	{
 		//public : private
@@ -94,7 +114,9 @@ angular.module('farmApp')
 		addRestaurant: addRest,
 		deleteRestaurant: deleteRest,
 		editRestaurant: editRest,
-		//getCoords: getCoords
+		getCoords: getCoords,
+		getRestCoords: getRestCoords
+		
 	}
 })
 

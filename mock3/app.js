@@ -21,11 +21,11 @@
     })
     .when('/consumer', {
       templateUrl: 'consumerFeature/consumers.html',
-      controller: 'MainController as CustCtrl'
+      controller: 'MainController as mainCtrl'
     })
      .when('/consumer/:custId', {
       templateUrl: 'consumerFeature/profile.html',
-      controller: 'MainController as CustCtrl'
+      controller: 'MainController as mainCtrl'
     })
     .when('/register', {
       templateUrl: 'views/register.html',

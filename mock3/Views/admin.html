@@ -1,8 +1,8 @@
 <section id="growers" class="col-lg-5 col-md-5 col-sm-5" ng-controller="FarmController as farmCtrl">
 		<h2>Registered Local Growers: </h2>
-		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
+		<input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
 		<div class="viewBox">
-		 <article class="listings" ng-repeat="producer in farmCtrl.producers  | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
+		<article class="listings" ng-repeat="producer in farmCtrl.producers  | orderBy: 'name'| filter:query" class="col-lg-8 col-md-8 col-sm-12">
 		<h3><a href="#/adminfarm/{{producer._id}}">{{producer.name}}  <i class="fa fa-chevron-right"></i></a></h3>
 		<h4>{{producer.state}}</h4>
 		<img ng-src="{{producer.photo}}">

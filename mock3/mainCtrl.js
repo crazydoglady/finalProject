@@ -5,6 +5,20 @@
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
 
+        var members = [];
+
+        mainCtrl.getMembers = function() {
+          restCtrl.restaurants.forEach(function(i, idx, arr){
+          members.push(restaurants[i]);
+          console.log(members.length() , "member array Length");
+          });
+          farmCtrl.producers.forEach(function(i, idx, arr){
+          members.push(producers[i]);
+          console.log(members.length() , "member array Length");
+          });
+          console.log(members, "members");
+        }
+
       // MainService.getConsumer().success(function(data){
       //  mainCtrl.members = data;
       //  });
@@ -17,9 +31,9 @@
       // MainService.getSingleProfile($routeParams.memberId).success(function(data){
       // 	mainCtrl.SingleMember = data;
       // });
-      MainService.getConsumer().success(function(data){
-       mainCtrl.members = data;
-       });
+      // MainService.getConsumer().success(function(data){
+      //  mainCtrl.members = data;
+      //  });
 
 
       // MainService.getSingleConsumer($routeParams.memberId).success(function(data){
@@ -72,7 +86,7 @@
           console.log(i , "element");
           console.log(idx , "index");
           console.log(arr , "array");
-          RestaurantService.getCoords(i);
+          RestaurantService.getRestCoords(i);
 
         });
 
@@ -165,7 +179,7 @@
       id: 0,
       coords: {
         latitude: $scope.map.center.latitude,
-        longitude: $scope.map.center.longitude,
+        longitude: $scope.map.center.longitude
       },
       options: { draggable: true },
       events: {
