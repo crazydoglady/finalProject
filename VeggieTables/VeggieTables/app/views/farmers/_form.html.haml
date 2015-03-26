@@ -1,6 +1,9 @@
- = form_for @farmer do |f|
-
+= form_for @farmer do |f|
+    
   .field
+    =f.label :type
+    =f.select :type, options_for_select(Farmer::TYPE_OPTIONS, f.object.type), include_blank: '--select--'  .field
+  .field 
     =f.label :name
     =f.text_field :name
   .field

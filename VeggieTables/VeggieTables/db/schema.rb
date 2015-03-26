@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326002733) do
+ActiveRecord::Schema.define(version: 20150326212210) do
 
   create_table "farmers", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.string   "location",    limit: 255
     t.string   "email",       limit: 255
     t.string   "photo",       limit: 255
     t.text     "description", limit: 65535
@@ -26,6 +25,19 @@ ActiveRecord::Schema.define(version: 20150326002733) do
     t.boolean  "taters",      limit: 1
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "address",     limit: 255
+    t.string   "city",        limit: 255
+    t.string   "state",       limit: 255
+    t.string   "zipcode",     limit: 255
+    t.string   "type",        limit: 255
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "location",   limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -40,15 +52,23 @@ ActiveRecord::Schema.define(version: 20150326002733) do
     t.string   "name",       limit: 255
   end
 
+  create_table "registers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.string   "location",    limit: 255
     t.string   "email",       limit: 255
     t.string   "photo",       limit: 255
     t.string   "website",     limit: 255
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "address",     limit: 255
+    t.string   "city",        limit: 255
+    t.string   "state",       limit: 255
+    t.string   "zipcode",     limit: 255
   end
 
   create_table "users", force: :cascade do |t|

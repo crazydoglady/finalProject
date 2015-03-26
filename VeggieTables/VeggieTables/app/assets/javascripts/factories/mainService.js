@@ -103,6 +103,7 @@ angular.module('farmApp')
 	var addFarm = function (newProducer) {
 		console.log(newProducer);
 		$http.post(server, newProducer);
+		$location ('/farmer')
 	};
 
 	var deleteFarm = function (id) {

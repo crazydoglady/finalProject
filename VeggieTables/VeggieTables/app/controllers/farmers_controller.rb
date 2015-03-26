@@ -5,15 +5,26 @@ def index
   @farmers = Farmer.all
   respond_to do |format|
     format.json { render json: @farmers.to_json}
+    format.html
   end
 end
 
 def show
   respond_to do |format|
     format.json { render json: @farmer.to_json}
+  end
 end
 
 def create
+  @farmer = Farmer.create farmer_params
+  respond_to do |format|
+    format.json { render json: @farmer.to_json}
+  end
+  # redirect_to farmers_path
+end
+
+def new
+  @farmer = Farmer.new
 end
 
 def edit
@@ -25,7 +36,7 @@ end
 private
 
 def farmer_params
-  params.require(:farmers).permit(
+  params.require(:farmer).permit(
     :name,
     :location,
     :email,

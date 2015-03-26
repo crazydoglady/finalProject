@@ -3,15 +3,15 @@
   angular.module('farmApp')
     .controller('MainController', function(MainService, $location, $routeParams, $route, $scope) {
       var mainCtrl = this;
-      $scope.pageClass = 'page-main'
+      mainCtrl.pageClass = 'page-main'
 
       MainService.getProfiles().success(function(data){
        mainCtrl.members = data;
        });
 
-      MainService.getSingleProfile($routeParams.memberId).success(function(data){
-        mainCtrl.SingleMember = data;
-      });
+      // MainService.getSingleProfile($routeParams.memberId).success(function(data){
+      //   mainCtrl.SingleMember = data;
+      // });
 
       // mainCtrl.addProfile = function (newMember){
       //  //console.log(newMember);
@@ -34,15 +34,15 @@
   })
     .controller('RestaurantController', ['RestaurantService', function (RestaurantService, $location, $routeParams, $scope) {
       var restCtrl = this;
-      $scope.pageClass= 'page-restaurants'
+      restCtrl.pageClass= 'page-restaurants'
 
        RestaurantService.getRestaurants().success(function(data){
         restCtrl.restaurants = data;
        });
 
-      RestaurantService.getSingleRestaurant($routeParams.restaurantId).success(function(data){
-        restCtrl.SingleRestaurant = data;
-      });
+      // RestaurantService.getSingleRestaurant($routeParams.restaurantId).success(function(data){
+      //   restCtrl.SingleRestaurant = data;
+      // });
 
       restCtrl.addRestaurant = function (newRest){
         console.log(newRest);
@@ -65,7 +65,7 @@
   }])
     .controller('FarmController',['FarmService', function (FarmService, $location, $routeParams, $scope) {
       var farmCtrl = this;
-      $scope.pageClass='page-farmers'
+      farmCtrl.pageClass = 'page-farmers';
 
       FarmService.getProducers().success(function(data){
         console.log("**********")
@@ -73,14 +73,14 @@
         farmCtrl.producers = data;
        });
 
-      FarmService.getSingleProducer($routeParams.farmerId).success(function(data){
-        farmCtrl.SingleProducer = data;
-      });
+      // FarmService.getSingleProducer($routeParams.farmerId).success(function(data){
+      //   farmCtrl.SingleProducer = data;
+      // });
 
       farmCtrl.addProducer = function (newFarm){
         console.log(newFarm);
         FarmService.addProducer(newFarm);
-        $location.path('/farmers');
+        // $location.path('/farmers');
       }
 
       farmCtrl.deleteProducer = function (producer) {
