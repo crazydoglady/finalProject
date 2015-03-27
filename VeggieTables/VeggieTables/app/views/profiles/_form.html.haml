@@ -1,0 +1,24 @@
+= form_for @profile do |f|
+  .field 
+    =f.label :name
+    =f.text_field :name
+  .field
+    =f.label :type
+    =f.select :type, options_for_select(Profile::TYPE_OPTIONS, f.object.type), include_blank: '--select--'
+  .field
+    =f.label :address
+    =f.text_field :address
+  .field 
+    =f.label :city
+    =f.text_field :city
+  .field
+    =f.label :state
+    =f.text_field :state
+  .field
+    =f.label :zipcode
+    =f.text_field :zipcode
+  .field
+    =f.label :email
+    =f.text_field :email
+  .action
+    =f.submit 'Submit'
