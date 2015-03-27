@@ -12,10 +12,13 @@
 <section class="googleMaps row" ng-controller="GoogleMapsController as mapCtrl">
 <!-- <input ng-model="query" type="text" Placeholder="Search"> -->
 <ui-gmap-google-map class="col-lg-12 col-md-12 col-sm-12" center='map.center' zoom='map.zoom'>
-  <article ng-repeat="member in mainCtrl.members | filter: query">
-        <ui-gmap-marker coords="member.coords"  idkey="member._id">
+  
+        <ui-gmap-marker class="restMarkers" ng-repeat="member in restaurants track by $index" coords="member.coords"  idkey="member._id">
         </ui-gmap-marker>
-        </article>
+
+        <ui-gmap-marker class="farmMarkers" ng-repeat="producer in farmers track by $index" coords="producer.coords"  idkey="producer._id">
+        </ui-gmap-marker>
+  
     </ui-gmap-google-map>
 </section>
 </div>

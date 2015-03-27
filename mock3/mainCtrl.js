@@ -5,19 +5,28 @@
       var mainCtrl = this;
       $scope.pageClass = 'page-main';
 
-        var members = [];
+      $scope.restaurants= [];
+      $scope.farmers=[];
+          RestaurantService.getRestaurants().success(function(restaurants) {
+            console.log(restaurants);
+            $scope.restaurants = restaurants;
+          });
+          //   restaurants.forEach(function(i, idx, arr){
+          // $scope.members.push(restaurants[i]);
+          // console.log($scope.members.length , "member array Length");
+          //   });
+         
+          FarmService.getProducers().success(function(producers){
+            console.log(producers);
+            $scope.farmers= producers;
+          });
 
-        mainCtrl.getMembers = function() {
-          restCtrl.restaurants.forEach(function(i, idx, arr){
-          members.push(restaurants[i]);
-          console.log(members.length() , "member array Length");
-          });
-          farmCtrl.producers.forEach(function(i, idx, arr){
-          members.push(producers[i]);
-          console.log(members.length() , "member array Length");
-          });
-          console.log(members, "members");
-        }
+          // farmCtrl.producers.forEach(function(i, idx, arr){
+          // members.push(producers[i]);
+          // console.log(members.length() , "member array Length");
+          // });
+          // console.log(members, "members");
+    
 
       // MainService.getConsumer().success(function(data){
       //  mainCtrl.members = data;
