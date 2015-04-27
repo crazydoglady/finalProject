@@ -1,0 +1,37 @@
+= form_for @farmer do |f|
+    
+  .field
+    =f.label :type
+    =f.select :type, options_for_select(Farmer::TYPE_OPTIONS, f.object.type), include_blank: '--select--'  .field
+  .field 
+    =f.label :name
+    =f.text_field :name
+  .field
+    =f.label :location
+    =f.text_area :location
+  .field
+    =f.label :email
+    =f.text_field :email
+  .field
+    =f.label :photo
+    =f.text_field :photo
+  .field
+    =f.label :description
+    =f.text_area :description
+  .field
+    =f.label :fruits
+    =f.check_box :fruits
+  .field
+    =f.label :vegetables
+    =f.check_box :vegetables
+  .field
+    =f.label :herbs
+    =f.check_box :herbs
+  .field
+    =f.label :squash
+    =f.check_box :squash
+  .field
+    =f.label :taters
+    =f.check_box :taters
+  .actions
+    =f.submit 'Save'

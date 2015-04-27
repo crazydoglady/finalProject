@@ -25,8 +25,8 @@ header {
 	background: $earth;
 	color: $celery;
 	padding-top: 5em;
+	border-bottom: 3px solid $tomato;
 	nav ul {
-    background: $earth;
 		float: right;
 	  	list-style-type: none;
 	  	li{
@@ -47,7 +47,7 @@ h1 {
 	}
 label {
 	color: $grey;
-}
+}	
 .jumbotron {
 	height: 100%;
 }
@@ -55,7 +55,7 @@ label {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	padding: 0;
+	padding: 0;	
 }
 .wrapper {
 	margin: 1% 0 0 6%;
@@ -67,20 +67,18 @@ label {
 
 
 /*main view*/
-.splash {
-	overflow-x: hidden;
-	margin: 0;
-	padding: 0;
-	img{
-		position: relative;
-		margin: 1% 0 0 1%;
-		padding: 0;
-		border: 5px solid $neutral;
-		box-shadow: 3px 5px 7px black;
-}}
+.background {
+	height: 200vh;
+	background: url('../assets/background-barn-wood.jpg');
+	background-size: cover;
+}
+.container {
+	overflow: hidden;
+
+}
 #chef{
 	position: absolute;
-	margin: 7% 0 0 4%;
+	margin: 7% 0 0 0;
 	z-index: 1;
 	-ms-transform: rotate(14deg); /* IE 9 */
     -webkit-transform: rotate(14deg); /* Chrome, Safari, Opera */
@@ -94,7 +92,7 @@ label {
 }
 #carrots {
 	position: absolute;
-	margin: 5% 0 0 83%;
+	margin: 5% 0 0 60%;
 	width: 33%;
 	z-index: 10;
 	-ms-transform: rotate(7deg); /* IE 9 */
@@ -103,7 +101,7 @@ label {
 }
 #celery {
 	position: absolute;
-	margin: 10% 0 0 49%;
+	margin: 10% 0 0 29%;
 	width: 41%;
 	z-index: 5;
 	-ms-transform: rotate(-10deg); /* IE 9 */
@@ -112,7 +110,7 @@ label {
 }
 #tractor {
 	position: absolute;
-	margin: 53% 0 0 37%;
+	margin: 53% 0 0 22%;
 	width: 50%;
 	z-index: 4;
 	-ms-transform: rotate(17deg); /* IE 9 */
@@ -127,7 +125,7 @@ label {
 }
 #cabbage {
 	position: absolute;
-	margin: 36% 0 0 16%;
+	margin: 40% 0 0 0;
 	z-index: 2;
 	-ms-transform: rotate(-7deg); /* IE 9 */
     -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
@@ -135,7 +133,7 @@ label {
 }
 #swede{
 	position: absolute;
-	margin: 20% 0 0 73%;
+	margin: 20% 0 0 53%;
 	width: 25%;
 	z-index: 3;
 	-ms-transform: rotate(45deg); /* IE 9 */
@@ -162,16 +160,12 @@ label {
     	transform: rotate(0deg);
 		}
 }
-.background {
-	height: 150vh;
-	background: url('../assets/background-barn-wood.jpg');
-	background-size: cover;
-}
+
 /*-------------page class styles	*/
 .page{
-	bottom:0;
+	bottom:0; 
     padding-top:200px;
-    top:0;
+    top:0;  
     width:100%;
 }
 .page-main  {
@@ -192,7 +186,7 @@ label {
 	color: $dkgrey;
 	.prodIntro {
 	/*background: linear-gradient(rgba(217, 213, 201, 0.8), rgba(217, 213, 201, 0.8));
-	background-size: cover;*/
+	background-size: cover;*/	
 	a {
 		color: $basil;
 	}
@@ -232,9 +226,9 @@ label {
 
 
 /*-----------------map stuff*/
-.angular-google-map-container {
+.angular-google-map-container { 
 	margin: 11% 2% 0 1%;
-	height: 400px;
+	height: 400px; 
 }
 
 
@@ -248,11 +242,11 @@ label {
 	height: 550px;
 	margin: 1% 0 0 2%;
 	border-radius: 10px;
-	background: url('/assets/valBW.png');
+	background: url('../assets/valBW.png');
 	background-size: cover;
 	color: black;
 	&:hover{
-		background: url('/assets/valerie.jpg');
+		background: url('../assets/valerie.jpg');
 		background-size: cover;
 
 	}
@@ -262,11 +256,11 @@ label {
 	height: 550px;
 	margin: 1% 0 0 2%;
 	border-radius: 10px;
-	background: url('/assets/jackieBW.png');
+	background: url('../assets/jackieBW.png');
 	background-size: cover;
 	color: black;
 	&:hover{
-		background: url('/assets/jackie.jpg');
+		background: url('../assets/jackie.jpg');
 		background-size: cover;
 
 	}
@@ -321,3 +315,5 @@ label {
     from    { transform:translateY(100%); }
     to      { transform: translateY(0); }
 }
+
+

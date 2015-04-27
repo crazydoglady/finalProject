@@ -1,6 +1,6 @@
 <div class="container">
   <h2>{{restCtrl.SingleRestaurant.name}}</h2>
-<form ng-submit="restCtrl.editProfile(restCtrl.SingleRestaurant)">
+<form ng-submit="restCtrl.editRestaurant(restCtrl.SingleRestaurant)">
   <img ng-src="restCtrl.SingleRestaurant.photo" alt="">
   <label for="">Photo Url</label>
   <input type="url" ng-model="restCtrl.SingleRestaurant.photo">
@@ -19,6 +19,6 @@
     <label for="" class="col-lg-8 col-md-10 col-sm-12">e-mail</label>
     <input type="text" ng-model="restCtrl.SingleRestaurant.email" class="col-lg-8 col-md-10 col-sm-12" placeholder="e-mail">
     <div class="checkbox">
-  <button type="submit" class="col-lg-3 col-md-4 col-sm-6">Save changes</button>
+  <button action="submit" class="col-lg-3 col-md-4 col-sm-6">Save changes</button>
 	</form>
 </div>

@@ -3,7 +3,8 @@ var farmApp = angular
     'Devise',
     'ngAnimate',
     'ui.bootstrap',
-    'uiGmapgoogle-maps'])
+    'uiGmapgoogle-maps',
+    ])
   .config(function($httpProvider){
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $("meta[name=csrf-token").attr("content");
   })
@@ -57,6 +58,7 @@ var farmApp = angular
       templateUrl: 'assets/templates/farmers.html',
       controller: 'FarmController as farmCtrl'
     })
+    
     .when('/farmers/:farmerId', {
       templateUrl:'assets/templates/farmProfile.html',
       controller:'FarmController as farmCtrl'

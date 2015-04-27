@@ -8,7 +8,7 @@
       $scope.restaurants= [];
       $scope.farmers=[];
           RestaurantService.getRestaurants().success(function(restaurants) {
-            console.log(restaurants);
+            //console.log(restaurants);
             $scope.restaurants = restaurants;
           });
           //   restaurants.forEach(function(i, idx, arr){
@@ -17,7 +17,7 @@
           //   });
          
           FarmService.getProducers().success(function(producers){
-            console.log(producers);
+            //console.log(producers);
             $scope.farmers= producers;
           });
 
@@ -92,9 +92,9 @@
        RestaurantService.getRestaurants().success(function(data){
         restCtrl.restaurants = data;
         restCtrl.restaurants.forEach(function(i, idx, arr){
-          console.log(i , "element");
-          console.log(idx , "index");
-          console.log(arr , "array");
+          //console.log(i , "element");
+          //console.log(idx , "index");
+          //console.log(arr , "array");
           RestaurantService.getRestCoords(i);
 
         });
@@ -106,20 +106,20 @@
       });
 
       restCtrl.addRestaurant = function (newRest){
-        console.log(newRest);
+        //console.log(newRest);
         RestaurantService.addRestaurant(newRest);
         $location.path('/restaurant');
       }
 
       restCtrl.deleteRestaurant = function (restaurant) {
-        console.log(restaurant, "deleted");
-        console.log(restaurant._id);
+        //console.log(restaurant, "deleted");
+        //console.log(restaurant._id);
         RestaurantService.deleteRestaurant(restaurant._id);
       }
 
       restCtrl.editRestaurant = function(restaurant){
-        console.log(restaurant);
-        console.log($routeParams, 'restCtrl');
+       // console.log(restaurant);
+       // console.log($routeParams, 'restCtrl');
         RestaurantService.editRestaurant(restaurant, $routeParams.restaurantId);
       }
 
@@ -130,11 +130,11 @@
 
       FarmService.getProducers().success(function(data){
         farmCtrl.producers = data;
-        console.log(data);
+        //console.log(data);
         farmCtrl.producers.forEach(function(i, idx, arr){
-          console.log(i , "element");
-          console.log(idx , "index");
-          console.log(arr , "array");
+         // console.log(i , "element");
+         // console.log(idx , "index");
+         // console.log(arr , "array");
           FarmService.getFarmCoords(i);
 
         });
@@ -150,20 +150,20 @@
       });
 
       farmCtrl.addProducer = function (newFarm){
-        console.log(newFarm);
+        //console.log(newFarm);
         FarmService.addProducer(newFarm);
         $location.path('/farmers');
       }
 
       farmCtrl.deleteProducer = function (producer) {
-        console.log(producer , "deleted");
-        console.log(producer._id);
+        //console.log(producer , "deleted");
+        //console.log(producer._id);
        FarmService.deleteProducer(producer._id);
       }
 
       farmCtrl.editProducer = function(producer){
-        console.log(producer);
-        console.log($routeParams.farmerId);
+        //console.log(producer);
+        //console.log($routeParams.farmerId);
         FarmService.editProducer(producer, $routeParams.farmerId);
       }
 

@@ -4,14 +4,10 @@
     <h3>and everyone who loves them!</h3>
     <p>Farmstand was made to support the little guys. A place where locally owned producers can network with local restaurants and consumers for locally produced items. </p>
     <p></p>
-    <div class="col-lg-4 col-md-4 col-sm-6 joinUs">
-       <h1>Join!</h1>
-       <p><a class="btn btn-primary btn-lg" href="#/register" role=" button">Register</a></p>
   </div>
-    </div>
 <section class="googleMaps row" ng-controller="GoogleMapsController as mapCtrl">
 <!-- <input ng-model="query" type="text" Placeholder="Search"> -->
-<ui-gmap-google-map class="col-lg-12 col-md-12 col-sm-12" center='map.center' zoom='map.zoom'>
+<ui-gmap-google-map class="col-lg-12 col-md-12 col-sm-12"  id="memberMap" center='map.center' zoom='map.zoom'>
   
         <ui-gmap-marker class="restMarkers" ng-repeat="member in restaurants track by $index" coords="member.coords"  idkey="member._id">
         </ui-gmap-marker>
@@ -22,6 +18,10 @@
     </ui-gmap-google-map>
 </section>
 </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 joinUs">
+       <h1>Join!</h1>
+       <p><a class="btn btn-primary btn-lg" href="#/register" role=" button">Register</a></p>
+    </div>
 <!-- <div class="resources">
   <h2>Interested in growing your own food?</h2>
   <ul>

@@ -1,4 +1,5 @@
 <div class="container">
+
 <div class="jumbotron row restIntro">
   <h1>Welcome, local restaurants!</h1>
   <h3>and everyone who loves them!</h3>
@@ -9,7 +10,7 @@
 		 <input id="queryBox" ng-model="query" type="text" name="searchbox" placeholder="FILTER RESULTS">
 		 </div>
 		<article class="listings col-lg-6 col-md-6 col-sm-12" ng-repeat="restaurant in restCtrl.restaurants| orderBy: 'name'| filter:query">
-		<h3><a href="#/restaurant/{{restaurant._id}}">{{restaurant.name}}  <i class="fa fa-chevron-right"></i></a></h3>
+		<h3><a href="#/restaurant/{{restaurant.id}}">{{restaurant.name}}  <i class="fa fa-chevron-right"></i></a></h3>
 		<h4>{{restaurant.location}}</h4>
 		<img ng-src="{{restaurant.photo}}">
 		</article>
